@@ -1,0 +1,45 @@
+<!-- 作用：查找标签，设置样式 -->
+<!-- 如：标签选择器，类型选择器，id选择器，通配符选择器 -->
+
+<!-- 标签选择器：使用标签名作为选择器，选择同名标签设置相同的样式比如p,h1,div... -->
+<!-- 类选择器：查找标签，差异化设置标签的显示效果，定义类选择器->使用类选择器->标签添加 class="类名"   -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: red;
+        }
+
+        .green{
+            color: green;
+        }
+
+        .size{
+            font-size: 50px;
+            color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <P>这是第一个 p 标签</P>
+    <p>这是第二个 p 标签</p>
+    <p class="green">这是第三个p标签</p>
+    <div class="green"> 这是第一个div标签</div>
+    <br>
+
+    <a href="" class="green" class="red">这是一个连接</a>
+    <!-- 一个标签可以使用多个类名，class属性值写多个类名，使用空格分开 -->
+    <a href="" class="green" class="size">这是一个连接</a>
+    <a href="" class="green size">这是一个连接</a>
+   
+</body>
+</html>

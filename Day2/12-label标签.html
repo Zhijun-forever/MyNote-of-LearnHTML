@@ -1,0 +1,25 @@
+<!-- 网页中某个标签的说明文本 -->
+<!-- 同时还能用label标签增大表单控件的点击范围 点击文字也可也跟控件交互-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>label标签</title>
+</head>
+<body>
+    <!-- 写法一 -->
+    <!-- label只包裹内容，不包裹表单控件，label标签的for属性值和表单控件的id属性值相同 -->
+     <input type="radio">男(没用label标签绑定)
+     <br>
+     <input type="radio" id="man">
+     <label for="man">男(使用label标签绑定)</label>
+
+    <br>
+    <!-- 写法二 -->
+    <!-- 使用label标签包裹文字和表单控件，不需要属性 -->
+    <label><input type="radio">男</label>
+
+</body>
+</html>

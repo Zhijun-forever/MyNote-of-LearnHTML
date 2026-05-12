@@ -1,0 +1,61 @@
+<!-- 作用：将多个单元格合并成一个单元格，以合并同类信息 -->
+
+<!-- 可以跨行合并，跨列合并 -->
+
+<!-- 步骤： -->
+<!-- 明确合并的目标，一般保留最左最上的单元格，添加属性 -->
+<!-- 跨行合并：保留最上单元格，添加属性rowspan -->
+<!-- 跨列合并：保留最左单元格，添加属性colspan -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨行合并</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>语文</th>
+                <th>数学</th>
+                <th>总分</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>张三</td>
+                <td>99</td>
+                <!-- rowspan="2"表示跨行合并两个 -->
+                <td rowspan="2">100</td>
+                <td>199</td>
+            </tr>
+
+             <tr>
+                <td>李四</td>
+                <td>98</td>
+                <!-- 然后把这个100删除 -->
+                <!-- <td>100</td> -->
+                <td>198</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+             <tr>
+                <td>总结</td>
+                <!-- clowspan="3"表示跨列合并三个 -->
+                <td colspan="3">全市第一</td>
+                <!-- <td>全市第一</td> -->
+                <!-- <td>全市第一</td> -->
+            </tr>
+        </tfoot>
+
+    </table>
+
+</body>
+</html>
