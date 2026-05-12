@@ -1,0 +1,34 @@
+<!--  
+作用：查找页面所有标签，设置相同样式
+通配符选择器：*，不需要调用，浏览器自动查找页面所有标签，设置相同样式
+注意：性能较差，慎用
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通配符选择器</title>
+     <style>
+        *{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>这是一个段落。</p>
+    <p>这是另一个段落。</p>
+    <h1>这是一个标题。</h1>
+    <div>这是一个div元素。</div>
+    <span>这是一个span元素。</span>
+
+    <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+    </ul>
+
+    <strong>这是一个粗体元素。</strong>
+   
+</body>
+</html>

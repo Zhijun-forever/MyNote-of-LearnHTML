@@ -1,0 +1,28 @@
+<!-- ID选择器 -->
+<!-- 作用：查找标签，差异化设置标签的显示效果 -->
+<!-- 场景：当一个标签需要特殊的显示效果时，可以使用ID选择器来设置该标签的样式。 -->
+<!-- 语法：#id{属性:属性值;} -->
+<!--  
+使用步骤：
+1. 定义ID选择器：在CSS中使用#符号后跟ID名称来定义ID选择器。例如，#myId { color: red; }。
+2. 使用ID选择器：在HTML标签中使用id属性来指定该标签的ID。例如，<p id="myId">这是一个段落。</p>。
+3. 注意事项：ID选择器在一个HTML文档中应该是唯一的，即每个ID只能被一个标签使用。此外，ID选择器的优先级较高，如果一个标签同时使用了ID选择器和其他选择器，ID选择器的样式将会覆盖其他选择器的样式。
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID选择器</title>
+    <style>
+        #red {
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="red">这是一个div元素。</div>
+</body>
+</html>

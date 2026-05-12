@@ -1,0 +1,97 @@
+<!--  
+
+字体大小            front-size
+字体颜色            color
+字体倾斜            font-style
+字体加粗            font-weight
+行高                line-height
+字体族              font-family
+字体复合属性         font
+文本缩进             text-indent
+文本对齐             text-align
+修饰线               text-decoration
+文本装饰颜色         text-decoration-color
+-->
+
+<!--  
+font 属性是一个复合属性，可以同时设置字体的多个方面，包括字体大小、
+字体颜色、字体倾斜、字体加粗、行高和字体族等。使用font属性可以简化CSS代码，
+使得设置字体样式更加方便和高效。
+语法:
+font: [font-style] [font-weight] [font-size]/[line-height] [font-family];
+其中，font-style、font-weight、line-height是可选项，可以根据需要选择性地设置。font-size和font-family是必需项，必须指定。
+例如：font: italic bold 16px/1.5 "微软雅黑", sans-serif;
+-->
+
+<!--  
+文本对齐方式:
+left: 左对齐
+right: 右对齐
+center: 居中对齐
+justify: 两端对齐
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字控制属性</title>
+    <style>
+        p{
+            line-height: 60px;
+            font-size: 15px;
+            text-indent: 2em;
+        }
+        h3{
+            font-size: 30px;
+            color: red;
+            font-style: italic;
+            font-weight: bold;
+            line-height: 50px;
+            font-family: "微软雅黑", sans-serif;
+            text-indent: 50px;
+            text-align: center;
+            text-decoration: overline wavy blue;
+        }
+        em{
+            font-style: normal;
+        }
+        
+        div{
+            height: 50px;
+            background-color: aqua;
+            line-height: 50px;
+            /* 从左到右查找电脑上拥有的字体,属性最后一个是字体族名 */
+            font-family: 楷体, 楷体_GB2312, SimKai, 华文楷体, serif;
+        }
+
+        h1{
+            font: italic bold 16px/1.5"楷体", sans-serif;
+        }
+
+    </style>
+
+</head>
+<body>
+    <p>小米存储团队自 2021 年起推进基于 JuiceFS 的文件存储平台建设，
+        最初主要面向云原生及部分业务场景提供文件存储能力。2024 年，
+        小米提出全面 AI 战略后，原有异构存储体系在选型接入、数据流转
+        和研发运维等方面的问题进一步显现。基于多协议接入、弹性扩展、
+        多云适配和高性能访问等能力，团队最终确立了以 JuiceFS 为核心建
+        设统一文件存储基座的方向，用于统一支撑大数据、云原生和 AI 等业
+        务场景。
+    </p>
+    <h3>这是标题</h3>
+    <em>这是强调文本</em>
+
+    <div>这是div元素,行高和背景颜色相等,就能实现垂直居中</div>
+
+    <h1>这是使用font属性设置样式的font元素</h1>
+
+
+
+
+
+</body>
+</html>
