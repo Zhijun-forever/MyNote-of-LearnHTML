@@ -1,0 +1,98 @@
+<!-- 
+定义:由两个或者多个基础选择器组合成的选择器叫做复合选择器。
+作用:复合选择器可以让我们更精确的选中元素。
+
+
+
+后代选择器:选中某个元素的后代元素。
+选择器写法: 父元素  后代元素{样式属性:值;}   父子之间用空格隔开。
+例如:
+<style>
+    div span{
+        color: red;
+    }
+</style>
+<div>
+    <span>我是被选中的元素</span>
+    <p>我是被选中的元素</p>
+</div>
+
+
+
+
+
+子代选择器:选中某个元素的子元素。
+选择器写法: 父元素>子元素{样式属性:值;}
+例如:
+<style>
+    div>span{
+        color: blue;
+    }
+</style>
+<div>
+    <span>我是被选中的子元素</span>
+    <p>我是被选中的子元素</p>
+</div>
+
+
+
+
+
+
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后代选择器</title>
+</head>
+
+    <style>
+        div span{
+            color: red;
+        }
+
+        div>span{
+            color: blue;
+        }
+
+
+    </style>
+
+
+
+<body>
+
+    <!-- -----------------------后代选择器演示----------------------- -->
+    <div> -----------------------后代选择器演示----------------------- </div>
+
+
+    <span>其他元素1</span>
+    <div>
+        <span>我是被选中<strong>儿子</strong>的元素</span>
+        <p>其他元素2</p>
+        <div>
+            <span>我是被选中的<strong>孙子</strong>元素</span>
+        </div>
+    </div>
+    <br>
+
+    <!-- -----------------------子代选择器演示----------------------- -->
+    <div> -----------------------子代选择器演示----------------------- </div>
+    <div>
+        <span>儿子 span</span>
+        <p>
+            <span>孙子 span</span>
+        </p>
+        
+    </div>
+
+
+</body>
+</html>

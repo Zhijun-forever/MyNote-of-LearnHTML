@@ -1,0 +1,59 @@
+<!-- 
+伪选择器：选择元素的特定状态
+语法：selector:pseudo-class
+示例：
+<a href="https://www.example.com" target="_blank">这是一个链接</a>
+
+
+比如鼠标放在超链接旁边可以让它变色，点击它也可以变色，这些都是通过伪类选择器实现的。
+-->
+
+
+<!-- 
+未访问过的链接状态： 选择器：link{CSS属性}
+访问过的链接状态： 选择器：visited{CSS属性}
+鼠标悬停状态： 选择器：hover{CSS属性}
+鼠标点击状态： 选择器：active{CSS属性}
+
+注意：要给超链接设置以上状态要按照以下顺序设置：
+a:link{CSS属性}
+a:visited{CSS属性}
+a:hover{CSS属性}
+a:active{CSS属性}
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器</title>
+    <style>
+        a:link {
+            color: blue;
+        }
+        a:visited {
+            color: purple;
+        }
+        a:hover {
+            color: red;
+        }
+        a:active {
+            color: green;
+        }
+
+        div:hover {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.example.com" target="_blank">这是一个链接</a>
+    <div>这是一个div元素</div>
+
+
+</body>
+</html>

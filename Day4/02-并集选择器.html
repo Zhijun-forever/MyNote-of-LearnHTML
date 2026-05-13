@@ -1,0 +1,30 @@
+<!-- 
+并集选择器：选择多组标签设置相同的样式
+语法：
+    选择器1,选择器2,选择器3{属性:值;}
+    例如：
+    h1,p{color:red;}
+    上面代码中，h1和p标签的文字颜色都被设置为红色。 
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>并集选择器</title>
+
+    <style>
+        div,p,span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>这是一个div元素</div>
+    <p>这是一个p元素</p>
+    <span>这是一个span元素</span>
+</body>
+</html>

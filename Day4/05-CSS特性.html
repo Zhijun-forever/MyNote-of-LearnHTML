@@ -1,0 +1,86 @@
+<!-- 
+CSS特性：
+
+继承性：某些CSS属性会被子元素继承，例如字体颜色、字体大小等。
+       父元素设置的这些属性会自动应用到子元素上，除非子元素
+       有自己的样式覆盖了它们。
+
+       比如：吧font属性设置在body元素上，那么所有的子元素都会继承这个属性，
+       除非子元素有自己的font属性设置。
+
+
+
+层叠性：当多个CSS规则应用于同一个元素时，浏览器会根据特定的优先级
+       规则来决定哪个规则生效。这些规则包括选择器的权重、样式表的
+       位置以及重要性等因素。相同的属性会覆盖，不同的属性会叠加。
+
+优先级：CSS规则的优先级由选择器的类型和特定性决定。
+       内联样式（直接在元素上使用style属性）具有最高优先级，
+       其次是ID选择器、类选择器、属性选择器和元素选择器。
+       权重越高的选择器会覆盖权重较低的选择器.
+
+       通配符选择器<标签选择器<类选择器<ID选择器<内联样式<重要性（!important）
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS特性</title>
+    <style>
+        /* 父元素样式 */
+        body{
+            font-size:30px;
+            color: red;
+            font-weight: 700;
+        }
+
+        /* 补充：用于演示优先级 */
+        #test {
+            color: brown;  /* ID选择器 */
+        }
+    
+        .test {
+            color: pink;   /* 类选择器 */
+        }
+    
+        p {
+            color: yellow; /* 标签选择器 */
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <!-- -------------测试继承性------------- -->
+    <div>-------------测试继承性-------------</div>
+
+    <div>这是一个div元素</div>
+    <p>这是一个p元素</p>
+    <span>这是一个span元素</span>
+    <br>
+    <!-- 如果标签自己有样式，会覆盖父元素的样式 -->
+    <a href="" style="color: blue; font-weight: bold;">这是一个a元素</a>
+    <h1>这是一个h1元素</h1>
+
+    <!-- -------------测试层叠性------------- -->
+    <div>-------------测试层叠性-------------</div>
+    <p style="color: green;">这是一个p元素</p>
+    <p style="color: orange; text-align: center;">这是一个p元素</p>
+
+    <!-- -------------测试优先级------------- -->
+    <div>-------------测试优先级-------------</div>
+    <p style="color: green;">这是一个p元素</p>
+    <p style="color: orange; text-align: center;">这是一个p元素</p>
+    <p id="test" style="color: blue;">这是一个p元素</p>
+    <p class="test" style="color: purple;">这是一个p元素</p>
+
+</body>
+</html>
