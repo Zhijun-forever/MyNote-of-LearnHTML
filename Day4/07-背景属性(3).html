@@ -1,0 +1,65 @@
+
+<!-- 
+cover:等比例缩放背景图片以完全覆盖背景区,可能导致背景图片部分看不见
+
+contain:等比例缩放背景图片以完全装入背景区,可能背景区部分空白
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景属性</title>
+    <style>
+        .div1{
+            
+            width: 700px;
+            height: 500px;
+            background-color: pink;
+
+            background-image: url(../Images/01.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+
+            background-size: 20% 20%;
+
+        }
+         .div2{
+            width: 700px;
+            height: 500px;
+            background-color:rgb(112, 10, 10);
+
+            background-image: url(../Images/01.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+
+            background-size: cover;
+
+        }
+        .div3{
+            width: 700px;
+            height: 500px;
+            background-color:rgb(7, 97, 70);
+
+            background-image: url(../Images/01.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+
+            background-size: contain;
+
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="div1">div标签</div>
+    <div class="div2">div标签</div>
+    <div class="div3">div标签</div>
+    
+</body>
+</html>

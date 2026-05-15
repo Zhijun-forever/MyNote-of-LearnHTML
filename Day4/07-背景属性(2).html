@@ -1,0 +1,47 @@
+<!-- 
+背景图平铺方式：
+
+repeat-x：背景图在水平方向平铺
+repeat-y：背景图在垂直方向平铺
+repeat：背景图在水平和垂直方向都平铺
+no-repeat：背景图不平铺
+background-position：背景图位置：
+left top：背景图在元素的左上角
+center center：背景图在元素的中心
+right bottom：背景图在元素的右下角
+background-size：背景图大小：
+cover：背景图覆盖整个元素，可能会裁剪图片
+contain：背景图完全显示在元素内，可能会留空白
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景属性</title>
+    <style>
+        div{
+            width: 700px;
+            height: 700px;
+            background-color: pink;
+
+            background-image: url(../Images/01.jpg);
+            /* 不平铺：盒子左上角显示一张背景图 */
+            background-repeat: no-repeat;
+            /* 背景图位置：居中显示 接受两个值，第一个值是水平位置，第二个值是垂直位置 */
+            background-position: center center;
+            /* 背景图大小设置 */
+            background-size: 350px 350px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div>div标签</div>
+</body>
+</html>
