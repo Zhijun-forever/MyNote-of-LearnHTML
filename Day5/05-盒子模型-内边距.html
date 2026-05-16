@@ -1,0 +1,70 @@
+<!-- 
+作用:设置 内容 与 盒子边缘 之间的距离
+属性名: padding/padding-方位名词 
+
+-->
+
+<!-- 
+盒子模型-内边距-多值写法
+
+padding-方向-方向-方向...(最多链接四个方向)
+
+四个值都填写代表的顺序:上 右 下 左
+三个值都填写代表的顺序:上   左右    下
+两个值都填写代表的顺序:上下 左右
+一个值都填写代表的顺序:上下左右都一样 
+
+
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型-内边距</title>
+    <style>
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 设置盒子外边距,便于区分多个盒子 */
+            margin: 20px;
+            
+            /* padding: 50px; */
+            padding-left: 50px;
+            padding-bottom: 50px;
+            padding-right: 50px;
+            padding-top: 50px;
+        }
+
+        .div2{
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            /* 设置盒子外边距,便于区分多个盒子 */
+            margin: 20px;
+            
+            /* 按照上 右 下 左 的顺序排序 */
+            padding: 50px 50px 50px 50px ;
+
+            /* 按照上 左右 下 的顺序排序 */
+            /* padding: 50px 50px 50px; */
+
+            /* 只填写一个值的写法 */
+            /* padding: 50px; */
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="div1">这是一个div标签</div>
+
+    <div class="div2">这个是padding的多值写法</div>
+</body>
+</html>

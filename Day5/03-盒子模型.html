@@ -1,0 +1,41 @@
+<!-- 
+ 
+盒子模型 - 组成
+
+内容区域    width & height
+
+内边距      padding
+
+边框线      border
+
+外边距      margin(出现在盒子外边)
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型-组成</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /* 设置边距 而且会撑大盒子的整体 此时整体大小变成240px * 240px*/
+            padding: 20px;
+            border: 30px solid blue;
+            /* 设置外边距 */
+            margin: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>div标签</div>
+
+</body>
+</html>

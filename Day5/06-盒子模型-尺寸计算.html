@@ -1,0 +1,54 @@
+<!-- 
+解决添加padding后盒子被撑大的方法
+
+默认情况：
+盒子尺寸 = 尺寸内容 + border尺寸 + 内边距尺寸
+
+结论：给盒子加padding和border会撑大盒子
+
+解决：
+手动做减法：heigh 和 weigh 减去border和padding的尺寸
+内减模式：box-sizing:border-box
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型-尺寸计算</title>
+    <style>
+        .div1{
+            height: 160px;
+            width: 160px;
+            background-color: rgb(233, 140, 168);
+
+            border: 10px rgb(207, 207, 90) dashed;
+            padding: 10px;
+            /* 添加下边距 以便区分两个盒子 */
+            margin-bottom: 20px;
+        }
+
+        .div2{
+            height: 200px;
+            width: 200px;
+            box-sizing: border-box;
+            background-color: rgb(154, 252, 160);
+
+            border: 10px rgb(25, 149, 171) dashed;
+            padding: 10px;
+             /* 添加下边距 以便区分两个盒子 */
+            margin-bottom: 20px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="div1">这是一个div标签，200*200 手动减法</div>
+    <div class="div2">这是一个div标签，200*200 内减模式：box-sizing</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- 
+作用:创建虚拟元素(伪元素),用来摆放装饰性的内容
+
+选择器          说明
+E::before       在E元素里边最前面添加一个伪元素
+E::after        在E元素里边最后面添加一个伪元素
+
+注意:必须设置content:" "属性,用来设置伪元素的内容,如果没有内容,则引号留空即可
+伪元素默认是行内显示模式
+权重和标签选择器相同
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素</title>
+    <style>
+        div{
+            height: 300px;
+            width: 300px;
+            background-color: pink;
+        }
+
+        div::before{
+            content: "老鼠";
+        }
+
+        div::after{
+            content: "大米";
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div> 爱 </div>
+    
+</body>
+</html>

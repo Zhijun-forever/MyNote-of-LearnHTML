@@ -1,0 +1,105 @@
+<!-- 
+属性名:border (bd)
+
+属性值:边框线粗细  线条样式  颜色(不区分顺序)
+
+常用线条样式
+
+属性值      线条样式
+solid      实线
+dashed     虚线
+dotted     点线
+-->
+
+
+<!-- 
+设置单方向边框线
+
+属性名:border-方位名词(br+方位名词首字母)
+属性值:边框线粗细 线条样式 颜色(不区分顺序)
+ 
+方位名称:
+top
+bottom
+rigth
+left
+
+
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型-边框线</title>
+    <style>
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 10px;
+            border: 3px dashed #000;
+
+        }
+        .div2{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 10px;
+            border: 3px solid red;
+        }
+        .div3{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 10px;
+            border: 3px dotted darkcyan;
+        }
+        .div4{
+              width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 10px;
+            /* 底部点线 */
+            border-bottom: 3px dotted darkcyan;
+
+        }
+
+        .div5{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 10px;
+            /* 左边点线 */
+            border-left: 3px dotted darkcyan;
+        }
+
+        .div6{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            border-left: 3px dotted red;
+            border-bottom: 3px solid black;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    
+    <div class="div1">div 标签1</div>
+    <div class="div2">div 标签2</div>
+    <div class="div3">div 标签3</div>
+    <div class="div4">div 标签4 border-bottom</div>
+    <div class="div5">div 标签5 border-left</div>
+    <div class="div6">div 标签6 <br>混合</div>
+    
+</body>
+</html>

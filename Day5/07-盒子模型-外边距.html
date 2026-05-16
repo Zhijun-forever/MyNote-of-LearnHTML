@@ -1,0 +1,35 @@
+<!-- 
+盒子模型-外边距
+
+作用：拉开两个盒子之间的距离
+属性名：margin
+提示：与padding的多值写法类似，属性值，含义相同
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型-外边距</title>
+    <style>
+        div{
+            background-color: pink;
+            height: 200px;
+            width: 1000px;
+            /* 四周都设置外边距 */
+            /* margin: 20px; */
+            margin-left: 20px;
+
+            /* 指定方向设置外边距 (版心居中) */
+            /* 假设电脑宽度是2500 则实际左右外边距为 (2500-1000)/2  */
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div>内容版心</div>
+</body>
+</html>

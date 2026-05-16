@@ -1,4 +1,16 @@
 <!-- 
+属性名:display
+
+属性值          效果
+block           块级
+inline-block    行内块
+inline          行内
+
+
+-->
+
+
+<!-- 
 块级元素:
 独占一行
 宽度默认是父级的100%
@@ -20,23 +32,35 @@
         div{
             width: 100px;
             height: 100px;
+            /* display: inline-block; */
+            /* display: inline; */
         }
         .div1{
-            background-color: red;
+            background-color: darkred;
         }
         .div2{
-            background-color: yellow;
+            background-color: darkgoldenrod;
         }
         /* 行内:一行可以共存多个,尺寸由内容撑开 加宽高 不生效*/
         span{
-            width: 200px;
-            height: 200px;
+            width: 100px;
+            height: 100px;
+            /* display: block; */
+            /* display: inline-block; */
+        }
+
+        .span1{
+            background-color: darkred;
+        }
+        .span2{
+            background-color: darkgoldenrod;
         }
 
         /* 行内块:一行共存多个,默认尺寸由内容撑开,价宽高生效 */
         img{
             width: 100px;
             height: 100px;
+            /* display: block; */
         }
 
     </style>
@@ -49,8 +73,8 @@
     <div class="div2">div标签2</div>
 
     <!-- 行内元素 -->
-     <span>span11111</span>
-     <span>span2</span>
+     <span class="span1">span11111</span>
+     <span class="span2">span2</span>
 
     <!-- 行内块元素 -->
 

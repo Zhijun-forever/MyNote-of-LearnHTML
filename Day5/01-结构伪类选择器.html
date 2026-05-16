@@ -1,0 +1,46 @@
+<!-- 
+ 
+作用:根据元素的结构关系查找元素
+
+选择器             说明
+
+E:first-child      查找第一个E元素
+E:last-child       查找最后一个E元素
+E:nth-child(N)     查找第N个E元素(第一个元素N值为1)  可以使用公式,n从1开始
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器-基本使用</title>
+    <style>
+        li:first-child{
+            background-color: green;
+        }
+        li:last-child{
+            background-color: firebrick;
+        }
+        li:nth-child(2n){
+            background-color: aqua;
+        }
+
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li>li 1</li>
+        <li>li 2</li>
+        <li>li 3</li>
+        <li>li 4</li>
+        <li>li 5</li>
+        <li>li 6</li>
+        <li>li 7</li>
+        <li>li 8</li>
+
+    </ul>
+</body>
+</html>
