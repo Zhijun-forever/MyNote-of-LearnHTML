@@ -1,0 +1,63 @@
+<!-- 
+ 
+场景：父子级的标签，子集的添加上外边距会产生塌陷问题
+
+现象：导致父级一起向下移动
+
+-->
+
+
+<!-- 
+解决办法：
+
+取消子级margin，父级设置padding
+
+父级设置overflow：hidden
+
+父级设置border-top
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距问题-塌陷问题</title>
+    <style>
+        .father{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+
+            /* 解决问题的方法1 取消子级margin，父级设置padding*/
+            /* padding-top: 50px; */
+            /* box-sizing: border-box; */
+
+            /* 解决问题的方法2 父级设置overflow：hidden*/
+            /* overflow:hidden; */
+
+            /* 解决问题的方法3 父级设置border-top */
+            /* border-top:1px solid #000; */
+
+        }
+
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+
+            /* 问题根源 子集的外边距导致父级盒子向下移动*/
+            margin-top: 50px;
+
+        }
+    </style>
+
+</head>
+<body>
+    <div class="father">
+        <div class="son">son</div>
+
+    </div>
+</body>
+</html>

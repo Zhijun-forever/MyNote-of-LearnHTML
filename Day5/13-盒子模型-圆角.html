@@ -1,0 +1,77 @@
+<!-- 
+作用：设置元素的外边框为圆角 
+
+属性名：border-radius
+
+属性值：数字+px / 百分比
+
+赋值顺序：从左上角开始顺时针旋转，缺省的地方和对角的值一样
+-->
+
+<!-- 
+一个盒子想要变成圆形，直接设置为长宽的一半就行
+一个盒子想要变成胶囊形，直接设置为高的一半就行
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型-圆角</title>
+    <style>
+        .div1{
+            margin: 50px auto;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            box-sizing: border-box;
+            background-color: orange;
+            /* 四值： 左上 右上 右下 左下 */
+            /* border-radius: 10px 20px 40px 80px ; */
+
+            /* 三值：这时右上和左下一样大*/
+            /* border-radius: 10px 40px 80px; */
+
+            /* 二值：左上+右下   右上+左下  是一样的*/
+            border-radius: 10px 80px;
+        }
+
+        .div2{
+            margin: 50px auto;
+            width: 500px;
+            height: 200px;
+          
+            text-align: center;
+            line-height: 200px;
+            box-sizing: border-box;
+            background-color: orange;
+            border-radius: 100px;
+        }
+
+        .div3{
+            
+            margin: 50px auto;
+            width: 500px;
+            height: 500px;
+          
+            text-align: center;
+            line-height: 500px;
+            box-sizing: border-box;
+            background-color: orange;
+            border-radius: 250px;
+        
+        } 
+
+    </style>
+</head>
+<body>
+    <div class="div1">圆角属性设置方法</div>
+
+    <div class="div2">常见应用(胶囊)</div>
+
+    <div class="div3">常见应用(圆)</div>
+</body>
+</html>

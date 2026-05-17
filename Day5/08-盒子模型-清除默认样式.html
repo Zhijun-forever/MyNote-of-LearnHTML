@@ -1,0 +1,51 @@
+<!-- 
+清除标签默认的样式，比如：默认的内外边距。以便拿到设计稿后精确设计大小等。
+
+比如：
+
+通配符清除所有默认样式
+*{
+    margin:10px;
+    padding:10px;
+}
+
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除标签默认的样式</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            /* 设置所有标签启动内减模式 */
+            box-sizing: border-box;
+        }
+
+        /* 清除默认小圆点 */
+        li{
+            list-style: none;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    <h1>标题</h1>
+    <p>ppppp</p>
+    <ul>
+        <li>li</li>
+    </ul>
+
+
+
+</body>
+</html>

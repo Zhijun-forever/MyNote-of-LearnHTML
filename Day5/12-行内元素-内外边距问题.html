@@ -1,0 +1,30 @@
+<!-- 
+场景：行内元素添加margin和padding，无法改变元素垂直位置
+
+解决办法：给行内元素添加line-height可以改变垂直位置
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行内元素-内外边距问题</title>
+    <style>
+        span{
+            /* 此时只有水平的间距改变了，垂直方向没有改变 */
+            margin: 50px;
+            padding: 20px;
+            /* 只能加上行高来改变 */
+            line-height: 140px;
+
+        }
+    </style>
+
+</head>
+<body>
+    <span>span标签1</span>
+    <span>span标签2</span>
+</body>
+</html>

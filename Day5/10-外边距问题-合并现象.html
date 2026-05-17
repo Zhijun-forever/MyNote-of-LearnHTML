@@ -1,0 +1,40 @@
+<!--  
+场景：垂直排列的兄弟元素，上下margin会合并
+
+现象：取两个margin中的较大值生效
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距问题-合并现象</title>
+    <style>
+
+        .div1{
+            width: 100px;
+            height: 100px;
+            font-size: 50px;
+            color: white;
+            background-color: rgb(75, 2, 2);
+            margin-bottom: 50px;
+        }
+        .div2{
+            width: 100px;
+            height: 100px;
+            font-size: 50px;
+            color: white;
+            background-color: rgb(92, 92, 3);
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="div1">div1</div>
+    <div class="div2">div2</div>
+</body> 
+</html>
