@@ -1,0 +1,98 @@
+<!-- 
+场景：浮动元素会脱标，如果父级没有高度，子集无法撑开父级高度 
+
+解决方法：清除浮动（清除浮动带来的影响）
+
+方法一：在父元素内容最后添加一个块级元素，设置css属性：clear：both
+
+方法二：单伪元素法,
+<div class="top clearfix2">
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="clearfix2"></div>
+    </div>
+    <div class="bottom"></div>
+
+方法三（推荐）：双伪元素法
+
+
+方法四：父元素添加CSS属性overflow:hidden
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        .top{
+            /* 解决方法四 */
+            /* overflow: hidden; */
+
+
+            margin: 10px auto;
+            width: 1200px;
+
+            /* 如果父级没有设置高，就会浮动脱标 */
+            /* height: 300px; */
+            background-color: pink;
+        }
+
+        .top .left{
+            float: left;
+
+            width: 200px;
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        .top .right{
+            float: right;
+
+            width: 950px;
+            height: 300px;
+            background-color: orange;
+        }
+        
+        .bottom{
+            height: 100px;
+            background-color: brown;
+        }
+
+        /*  解决方法一  */
+        .top .clearfix1{
+            clear: both;
+        }
+        
+        /*  解决方法二  */
+        .top .clearfix2::after{
+            content:"";
+            display:block;
+            clear: both;
+        }
+
+        /* 解决方法二 */
+        /* 注意点之间不要有空格，表示同时拥有多个类 */
+        .top.clearfix3::before,
+        .top.clearfix3::after{
+            content:"";
+            display:table;
+        }
+        .top.clearfix3::after{
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top clearfix3">
+        <div class="left"></div>
+        <div class="right"></div>
+        <!-- 解决方法一 -->
+        <!-- <div class="clearfix1"></div> -->
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>
