@@ -1,0 +1,60 @@
+<!-- 
+弹性盒子可以自动挤压或者拉伸，默认情况下，所有弹性盒子都在一行显示
+
+属性名：flex-wrap
+
+属性值
+wrap：换行
+
+nowrap：不换行(这个时默认值)
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felx弹性盒子换行</title>
+    <style>
+        .box{
+            display: flex;
+            /* 设置自动换行 */
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            overflow: auto;
+            
+            height: 300px;
+            border: 1px solid #000;
+        }
+
+        .box div{
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        
+
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+</body>
+</html>

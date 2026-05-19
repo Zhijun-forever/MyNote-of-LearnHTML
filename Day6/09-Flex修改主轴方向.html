@@ -1,0 +1,73 @@
+<!-- 
+主轴默认在水平方向，侧轴默认在垂直方向
+
+属性名：flex-direction
+
+
+属性值              效果
+row                 水平方向，从左向右(默认)
+
+column              垂直方向，从上向下（重要）
+
+row-reverse         水平方向，从左向右
+
+column-reverse      垂直方向，从下向上
+
+-->
+
+<!--
+是否多此一举？
+ 
+情况：你想让多个子元素垂直堆叠排列（从上到下），并且整体居中
+例如容器内有三个按钮，希望它们排成一列，同时这列按钮在容器中水平居中、垂直居中。
+
+默认 row 下，子元素会水平排列在一行，无法垂直堆叠（除非额外限制宽度或换行）。
+
+必须使用 flex-direction: column 才能让子元素垂直排列。
+此时 justify-content: center 让这一列按钮在垂直方向上居中，align-items: center 让每个按钮水平居中。
+这种情况下，改成 column 是合理且必要的，不是多此一举。
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改主轴对齐方向</title>
+    <style>
+        .box{
+            display: flex;
+
+            /* 更改为垂直方向排列 侧轴自动变换到水平方向*/
+            flex-direction: column;
+
+            /* 设置主轴弹性盒子为居中对齐 */
+            justify-content: center;
+
+            /* 设置侧轴为居中对齐 */
+            align-items: center;
+
+            width: 150px;
+            height: 120px;
+            background-color: pink;
+        }
+
+        img{
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <img src="../Images/01.jpg" alt="作者头像">
+        <span>媒体</span>
+
+    </div>
+</body>
+</html>
