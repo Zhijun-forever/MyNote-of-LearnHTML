@@ -18,14 +18,17 @@
         .box{
             
             border: 1px solid #ddd;
+            /* 设置圆弧角 */
             border-radius: 8px;
             width: 1200px;
             height: 418px;
+            /* 版心居中 */
             margin: 50px auto;
 
         }
 
         .box ul{
+            /* 里边有四个li,所以使用flex并前自动换行 */
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -35,6 +38,7 @@
         }
         
         .box li{
+            /* 每个里里边有一张照片和一段文字所以使用flex让他们在一行 */
             display: flex;
             width: 500px;
             height: 88px;
@@ -43,6 +47,7 @@
         }
 
         .box .pic{
+            /* 图片和文字存在间隙 */
             margin-right: 15px;
         }
 
@@ -117,9 +122,3 @@
     </div>
 </body>
 </html>
-
-
-<!-- <li>一键发布到多端</li>
-<li>管理视频内容</li>
-<li>发布携带组件</li>
-<li>数据评估分析</li> -->
