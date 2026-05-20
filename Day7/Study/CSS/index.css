@@ -25,7 +25,8 @@ body{
 
 .header .wrapper{
     display: flex;
-    padding-top: 29px;;
+    padding-top: 19px;
+    
 }
 
 .logo a{
@@ -34,6 +35,7 @@ body{
     width: 195px;
     height: 41px;
     background-image: url(../images/logo.png);
+    
 
     /* 隐藏文字 */
     font-size: 0;
@@ -65,4 +67,45 @@ body{
 .nav ul li .active,
 .nav ul li :hover{
     border-bottom: 3px solid rgb(5, 198, 241);
+}
+
+
+.search{
+    display: flex;
+    width: 412px;
+    height: 40px;
+    background-color: #f3f5f7;
+    border-radius: 20px;
+
+    margin-left: 64px;
+    margin-top: 15px;
+    padding-left: 19px;
+    padding-right: 12px;
+
+}
+
+.search input{
+    flex:1;
+    border:0;
+    background-color: #f3f5f7;
+
+    /* 取消点击焦点框 */
+    outline: none;
+}
+
+/* 选中所有类名为 search 的元素内部的 <input> 元素的占位符文本*/
+.search input::placeholder{
+    font-size: 14px;
+    color: #999;
+}
+
+/* 父级是Flex布局，子集是弹性盒子，加宽高直接生效 */
+.search a{
+    background: url(../images/search.png);
+    width: 16px;
+    height: 16px;
+
+    /* 放大镜单独侧轴居中 */
+    align-self: center;
+
 }
