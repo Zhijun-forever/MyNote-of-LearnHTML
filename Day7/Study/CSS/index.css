@@ -1,111 +1,327 @@
-/* 首页css样式 */
-
-
-/* 设置版心居中 */
-.wrapper{
+/* 版心居中 */
+.wrapper {
     margin: 0 auto;
     width: 1200px;
+    white-space: nowrap;
 }
 
-a{
-    color: #333;
-     text-decoration: none;
-}
-
-body{
+/* 背景颜色 */
+body {
     background-color: #f3f5f7;
 }
 
 /* 头部区域 */
-.header{
-    
+.header {
     height: 100px;
-    background-color: #ffff;
+    background-color: #fff;
 }
 
-.header .wrapper{
+.header .wrapper {
+    padding-top: 29px;
     display: flex;
-    padding-top: 19px;
-    
 }
 
-.logo a{
-    /* 转换显示模式，不然宽高不生效 */
+/* logo */
+.logo a {
     display: block;
     width: 195px;
     height: 41px;
     background-image: url(../images/logo.png);
-    
-
-    /* 隐藏文字 */
     font-size: 0;
 }
 
-.nav{
+/* 导航 */
+.nav {
     margin-left: 102px;
 }
 
-.nav ul{
+.nav ul {
     display: flex;
-    justify-content: space-between;
-    align-content: 20px;
-    
 }
 
-.nav ul li {
-    list-style: none;
+.nav li {
     margin-right: 24px;
 }
 
-.nav ul li a{
+.nav li a {
     display: block;
-    padding: 6px 20px;
+    padding: 6px 8px;
     line-height: 27px;
+    font-size: 19px;
 }
 
-/* 并集选择器，设置鼠标悬停 首页设为默认加下横线*/
-.nav ul li .active,
-.nav ul li :hover{
-    border-bottom: 3px solid rgb(5, 198, 241);
+/* active 类选择器，表示默认选中的a */
+.nav li .active,
+.nav li a:hover {
+    border-bottom: 2px solid #00a4ff;
 }
 
-
-.search{
+/* 搜索 */
+.search {
     display: flex;
+    margin-left: 64px;
     width: 412px;
     height: 40px;
-    background-color: #f3f5f7;
-    border-radius: 20px;
-
-    margin-left: 64px;
-    margin-top: 15px;
     padding-left: 19px;
     padding-right: 12px;
-
+    background-color: #f3f5f7;
+    border-radius: 20px;
 }
 
-.search input{
-    flex:1;
-    border:0;
-    background-color: #f3f5f7;
-
-    /* 取消点击焦点框 */
+.search input {
+    flex: 1;
+    border: 0;
+    /* 透明背景色 */
+    background-color: transparent;
+    /* 去除表单的焦点框 */
     outline: none;
 }
 
-/* 选中所有类名为 search 的元素内部的 <input> 元素的占位符文本*/
-.search input::placeholder{
+/* ::placeholder 选中就是 placeholder 关键字样式 */
+.search input::placeholder {
     font-size: 14px;
     color: #999;
 }
 
-/* 父级是Flex布局，子集是弹性盒子，加宽高直接生效 */
-.search a{
-    background: url(../images/search.png);
+.search a {
+    /* 纵轴居中 */
+    align-self: center;
     width: 16px;
     height: 16px;
+    background-image: url(../images/search.png);
+}
 
-    /* 放大镜单独侧轴居中 */
-    align-self: center;
+/* 用户 */
+.user {
+    margin-top: 4px;
+    margin-left: 32px;
+}
 
+.user img {
+    /* 行内块和行内垂直方向对齐方式 */
+    vertical-align: middle;
+    margin-right: 7px;
+}
+
+.user span {
+    font-size: 16px;
+    color: #666;
+}
+
+
+
+.banner{
+    height: 420px;
+    background-color: #0092cb;
+}
+
+.banner .wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 420px;
+    background-image: url(../uploads/banner.png);   
+}
+
+
+.banner .wrapper .left{
+    width: 191px;
+    height: 420px;
+    padding: 3px 20px;
+    background-color: rgba(0,0,0,0.42);
+}
+
+.banner .wrapper .left a{
+    display: block;
+    height: 46px;
+    background: url(../images/right.png) no-repeat right center;
+    font-size: 16px;
+    line-height: 46px;
+    color: #fff;
+}
+
+.banner .wrapper .left a:hover{
+    background-image: url(../images/right-hover.png);
+    color: #00a4ff;
+}
+
+.banner .right{
+    margin-top: 60px;
+
+
+    width: 248px;
+    height: 305px;
+    background-color: #209dd5;
+
+    border-radius: 10px;
+}
+
+
+.banner .right h3{
+    margin-left: 14px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 15px;
+    color: white;
+    font-weight: 400;
+}
+
+
+.banner .right .content{
+    padding: 14px;
+    height: 257px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+
+.banner .right dl{
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.banner .right dt{
+    margin-bottom: 8px;
+    line-height: 20px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.banner .right dd{
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.banner .right dd span{
+    color: #00a4ff;
+}
+
+.banner .right dd strong{
+    color: #7d7d7d;
+    font-weight: 400;
+}
+
+
+.banner .right a{
+    display: block;
+    height: 32px;
+    background-color: #00a4ff;
+    text-align: center;
+    border-radius: 15px;
+    line-height: 32px;
+    font-size: 14px;
+    color:#fff;
+}
+
+
+
+.recommend{
+    display: flex;
+    padding: 0 20px;
+    margin-top: 11px;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(211, 211, 211, 0.5);
+
+    /* 垂直居中，高度设置和盒子高一样就行 */
+    line-height: 60px;
+}
+
+
+.recommend h3{
+    font-size: 18px;
+    color: #00a4ff;
+    font-weight: 400;
+}
+.recommend ul{
+    display: flex;
+    flex:1;
+}
+
+
+.recommend ul li a{
+    padding:0 24px;
+    border-right: 1px solid #e0e0e0;
+    font-size: 18px;
+}
+.recommend ul li:last-child a{
+    border-right:none;
+}
+
+.recommend .modify{
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+
+.course{
+    margin-top: 15px;
+}
+
+/* - 公共类-可以与其他类共用 */
+.hd{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    line-height: 60px;
+}
+
+.hd h3{
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.hd .more{
+    background: url(../images/more.png) no-repeat  right center;
+    padding-right: 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+.bd ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+/* 课程内容-li */
+.bd li{
+    margin-bottom: 14px;
+    width: 228px;
+    height: 271px;
+    background-color: pink;
+}
+
+.bd li .pic{
+    height: 156px;
+}
+
+.bd li .text{
+    padding: 20px;
+    height: 115px;
+    background-color: #fff;
+}
+.bd li .text h4{
+    height: 40px;
+    margin-bottom: 13px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.bd li .text p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+}
+
+.bd li .text p span{
+    font-weight: 700;
+    color: gold;
+}
+
+.bd li p i{
+    font-style: normal;
 }
