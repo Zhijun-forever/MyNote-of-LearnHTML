@@ -1,0 +1,36 @@
+<!-- 
+定位居中:
+
+实现步骤:
+1.绝对定位
+
+2.水平,垂直边偏移为50%
+
+3.子级向左,上移动自身尺寸的一半
+    transform:translate(50%,50%);
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位居中</title>
+    <style>
+        img{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            /* margin-left: -283px;
+            margin-top: -80px; */
+
+            /* 可以使用transform */
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <img src="../Images/deepseek.png" alt="">
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!-- 
+绝对定位: position:absolute
+使用场景:子集绝对定位,父级相对定位(子绝父相)
+
+
+
+原则:
+
+脱标,不再占用原来的位置
+
+参照物:先找最近的,已经定位的祖先元素;如果所有祖先元素都没定位,则参照浏览器窗口改位置
+
+绝对定位的盒子显示模式改变,宽高生效,具备了行内块的特点.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 400px;
+        }
+        .news{
+            position: relative;
+            top: 20px;
+            margin: 100px auto;
+            width: 400px;
+            height: 350px;
+            background-color: #f8f8f8;
+        }
+
+        .news span{
+            position: absolute;
+            right: 0px;
+            top: 0;
+            display: block;
+            width: 92px;
+            height: 32px;
+            background-color: rgba(0,0 , 0, 0.6);
+            text-align: center;
+            line-height: 32px;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="news">
+        <img src="../Images/01.jpg" alt="">
+        <span>展会活动</span>
+        <h4>2222世界移动大会</h4>
+    </div>
+</body>
+</html>
