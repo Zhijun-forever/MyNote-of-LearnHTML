@@ -1,0 +1,48 @@
+<!-- 
+css精灵，也叫CSS Sprites，是一种网页图片应用处理方式，把网页中一些背景图片整合
+到一张图片文件中，再设置background-position精确的定位出背景图片的位置。
+
+优点：减少服务器被请求次数，减轻服务器的压力，提高页面加载速度
+-->
+
+
+<!-- 
+实现步骤：
+
+1.创建盒子，盒子尺寸与小图尺寸相同
+2.设置盒子背景图为精灵图
+3.添加background-position属性，改变背景图位置
+    测量小图片左上角坐标
+    取负数坐标为background-position属性值（向左上移动图片位置）
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS精灵</title>
+    <style>
+        div{
+            /* 这样就能再一张大图里边，选取想要的图片 */
+            background-position: -612px -498px;
+            width: 200px;
+            height: 180px;
+            background-color: pink;
+            background-image: url(../Images/JD网页版心居中的大概效果.png);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
