@@ -1,0 +1,38 @@
+<!-- 
+过渡transition
+
+作用：可以为一个元素在不同状态之间切换的时候添加过渡效果
+属性名：transition （复合属性）
+属性值：过渡的属性 花费时间（秒）
+
+提示：
+过渡属性可以是具体的CSS属性
+
+也可以为all（两个状态属性值不同的所有属性，都产生过渡效果）
+
+transition设置给元素本身（不是加给比如xxx:hover标签）
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡transition</title>
+    <style>
+        img{
+            width: 600px;
+            height: 200px;
+            transition: all 0.5s;
+        }
+        img:hover{
+            width: 1200px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../Images/deepseek.png" alt="">
+</body>
+</html>

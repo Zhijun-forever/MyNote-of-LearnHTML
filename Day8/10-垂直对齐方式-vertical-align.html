@@ -1,0 +1,50 @@
+<!-- 
+垂直对齐方式 vertical-aling
+
+属性名：vertical-align
+
+属性值              效果
+baseline            基线对齐（默认）
+top                 顶部对齐
+middle              居中对齐
+bottom              底部对齐
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垂直对齐方式</title>
+    <style>
+        div{
+            border: 1px solid #000;
+        }
+        img{
+            width: 50%;
+            height: 50%;
+            /* 给占位最大的加属性 */
+            /* vertical-align: middle; */
+
+            /* 顶对齐：最高内容的顶部 */
+            /* vertical-align: top; */
+
+            /* 底对齐：最高内容的底部 */
+            /* vertical-align: bottom; */
+
+            /* 转显示模式为块，也可以取消底部空白 */
+            /* 因为浏览器把行内块，行内标签按照文字处理，默认按照基线对齐 */
+            /* 转为块后，不按基线对齐，空白就消失了 */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../Images/基线对齐.png" alt="">
+        基线对齐，文字和图片有时候会一上一下的原因
+    </div>
+</body>
+</html>

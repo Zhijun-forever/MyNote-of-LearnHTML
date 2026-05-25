@@ -1,0 +1,130 @@
+<!--
+定位+字体图标+Flex布局
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul{
+            display: flex;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        .banner{
+            position: relative;
+            margin: 0 auto;
+            width: 564px;
+            height: 315px;
+            overflow: hidden;
+        }
+
+        /* 图片 */
+        .banner img{
+            vertical-align: middle;
+            width: 564px;
+            border-radius: 12px;
+        }
+
+        .banner:hover .prev,
+        .banner:hover .next{
+            display: block;
+        }
+
+
+        .banner .prev,
+        .banner .next{
+            /* display属性设置为none可以设置为隐藏 */
+            display: none;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 30px;
+            background-color: rgba(0,0,0,0.5);
+            text-decoration: none;
+            color: #fff;
+
+            /* 箭头居中 */
+            line-height: 30px;
+            
+        }
+
+        .banner .prev{
+            left: 0;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .banner .next{
+            right: 0;
+            border-radius: 15px 0 0 15px;
+            /* 缺少加粗图标 手动加粗一下 */
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .banner ol{
+            display: flex;
+            position: absolute;
+            border-radius: 10px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 13px;
+            background-color: rgba(2,5,5,0.3);
+        }
+
+        .banner ol li{
+            width: 9px;
+            height: 9px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        .banner ol .active{
+            background-color: orange;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <!-- 图 -->
+        <ul>
+            <li><a href="#"><img src="../Images/轮播图/banner1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../Images/轮播图/banner2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../Images/轮播图/banner3.jpg" alt=""></a></li>
+        </ul>
+        <!-- 箭头 -->
+        <a href="#" class="prev">
+            <i class="iconfont icon-fanhui"></i>
+        </a>
+        <a href="#" class="next">
+            <i class="iconfont icon-jinru"></i>
+        </a>
+        <!-- 园点 -->
+         <ol>
+            <li></li>
+            <li class="active"></li>
+            <li></li>
+         </ol>
+    </div>
+</body>
+</html>

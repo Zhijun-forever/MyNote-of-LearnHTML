@@ -1,0 +1,33 @@
+<!-- 
+1.引入字体样式表iconfont.css
+
+2.标签使用字体图标类名
+ iconfont:字体图标基本样式（字体名，字体大小等）
+ icon-xxx：图标对应的类名
+例如： <span class="iconfont icon-xxx"></span>
+
+
+
+注意的点：
+注意优先级，比如iconfont已经定义了font-size，如果定义span类选择器，
+并设置字体大小，这时不会生效。  所有选择器的优先级要高于iconfont类
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体图标-使用字体</title>
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <style>
+        .iconfont{
+            font-size: 200px;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <span class="iconfont icon-favorite"></span>
+</body>
+</html>
