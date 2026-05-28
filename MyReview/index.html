@@ -5,33 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>十八岁出门远行</title>
     <style>
-        body{
-            background-color: rgba(20, 15, 0, 0.24);
-        }
-        *{
+        /* ========== 全局重置 & 基础风格 ========== */
+        * {
             margin: 0;
             padding: 0;
-            overflow: auto;
+            box-sizing: border-box;
+            /* 移除原样式中的 overflow: auto，避免全局滚动条异常，保留页面自然滚动 */
         }
 
-        .head h1,
-        .head h3{
-
-            text-align: center;
+        body {
+            background-color: #f8f4e8;  /* 柔和的米灰基底，替代原来的透明暖色，更护眼 */
+            font: 16px/1.7 "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", "Segoe UI", Roboto, system-ui, sans-serif;
+            color: #2c3e2f;
+            padding: 2rem 1rem;
+            min-height: 100vh;
         }
 
-
-        .MainText h1{
-            display: block;
-            text-align: center;
-            font-weight: 700;
-            
-        }
-
-        .MainText p{
+        /* 主容器卡片效果 */
+        .paper-container {
+            max-width: 960px;
             margin: 0 auto;
+            background: #fffef7;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        /* 头部区域 (原 .head) */
+        .head {
+            padding: 2.2rem 1.5rem 1rem 1.5rem;
+            border-bottom: 1px solid #e9e2d0;
+            background: #fffef7;
+        }
+
+        .head h1 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 650;
+            letter-spacing: 2px;
+            color: #2b4b2f;
+            margin-bottom: 0.5rem;
+        }
+
+        .head h3 {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 450;
+            color: #7d6e4e;
+            border-top: 1px dashed #e0d5be;
+            display: inline-block;
             width: auto;
-            height: auto;
+            margin: 0 auto;
+            padding-top: 0.6rem;
+            letter-spacing: 1px;
+        }
+
+        .head {
+            text-align: center;
+        }
+
+        /* 正文区域 升级保留原 .MainText 类，同时添加深度排版 */
+        .MainText {
+            padding: 2rem 2rem 3rem 2rem;
+            background: #ffffff;
+        }
+
+        /* 核心: 每段首行缩进 2 个汉字字符 (2em) + 优雅间距 */
+        .MainText p {
+            width: 85%;
+            max-width: 780px;
+            margin: 0 auto 1.25rem auto;   /* 上下段间距，左右自动居中 */
+            text-indent: 2em;               /* ★ 首行缩进2字符，完美实现每段缩进 */
+            line-height: 1.75;
+            font-size: 1rem;
+            color: #2c3e2f;
+            word-break: break-word;
+            text-align: left;
+            letter-spacing: 0.012em;
+        }
+
+        /* 确保段落内部自然换行，没有额外干扰 */
+        .MainText p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* 可选：添加精美的首字下沉装饰？不需要，但增加可读趣味 (保留干净) */
+        /* 针对移动端适配，让段落宽度自适应，保持舒适 */
+        @media (max-width: 760px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .MainText p {
+                width: 92%;
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin-bottom: 1.2rem;
+            }
+            .head h1 {
+                font-size: 1.7rem;
+            }
+            .MainText {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* 修饰引用/分割优雅感，不影响首行缩进 */
+        .reading-tip {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #b9aa86;
+            margin-top: 2rem;
+            border-top: 1px solid #f0ebdd;
+            padding-top: 1.5rem;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .reading-tip i {
+            font-style: normal;
+            background: #faf6ef;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+        }
+
+        /* 保留兼容用户原有类 (若有其他额外元素，保持干净) */
+        .MainText h1, .MainText h2 {
+            display: none;
+        }
+        /* 确保任何强加样式都不覆盖缩进 */
+        .MainText p {
+            text-indent: 2em !important;
         }
     </style>
 </head>
@@ -4474,6 +4579,10 @@
 
 
     </p>
+
+    <div class="reading-tip">
+        <i>每段首行自然缩进两个汉字 ( text-indent: 2em )</i>
+    </div>
    </div>
 </body>
 </html>
