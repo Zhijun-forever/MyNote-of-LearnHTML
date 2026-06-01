@@ -40,3 +40,45 @@
 .shortcut li .login{
     color: #5EB69C;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    height: 88px;
+}
+
+.header .logo{
+    margin-right: 20px;
+    width: 200px;
+    height: 88px;
+}
+
+.header .logo a{
+    /* a是行内标签，设置宽高不生效，先转为块级 */
+    display: block;
+    width: 200px;
+    height: 88px;
+    background-image: url(../images/logo.png);
+    font-size: 0;
+}
+
+/* 导航 */
+.header .nav{
+    margin-top: 33px;
+    margin-right: 28px;
+}
+
+.header .nav ul{
+    display: flex;
+}
+
+.header .nav li{
+    margin-right: 24px;
+}
+
+.header .nav li a:hover{
+    padding-bottom: 10px;
+    border-bottom: 2px #5EB69C solid;
+}
