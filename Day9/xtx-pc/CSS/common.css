@@ -75,10 +75,122 @@
 }
 
 .header .nav li{
-    margin-right: 24px;
+    margin-right: 44px;
 }
 
 .header .nav li a:hover{
     padding-bottom: 10px;
     border-bottom: 2px #5EB69C solid;
+}
+
+
+.header .search{
+    display: flex;
+    margin-top: 30px;
+    margin-right: 22px;
+    width: 170px;
+    height: 34px;
+    border: 2px solid #f4f4f4;
+}
+
+.header .search .iconfont{
+    margin-right: 8px;
+    font-size: 18px;
+    color: #ccc;
+}
+
+.header .search input{
+    /* 浏览器默认优先生效input标签的默认宽度，所以flex：1不生效 */
+    /* 解决办法，设置width为0，重置默认宽度 */
+    flex: 1;
+    width: 0;
+}
+
+.search input::placeholder{
+    font-size: 16px;
+    color: #ccc;
+}
+
+.cart{
+    margin-top: 32px;
+    position: relative;
+    
+}
+
+.cart .iconfont{
+    font-size: 24px;
+}
+
+.cart i{
+    position: absolute;
+    top: 1px;
+    left: 15px;
+    padding: 0 6px;
+    height: 15px;
+    background-color: #e26237;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 15px;
+}
+
+
+.footer{
+    height: 580px;
+    background-color: #f5f5f5;
+}
+
+/* 服务 */
+
+.footer .service{
+    padding: 60px 0;
+    height: 178px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.footer .service ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer .service ul li{
+    display: flex;
+    width: 190h;
+    height: 58px;
+}
+
+.footer .service ul li h5{
+    margin-right: 20px;
+    width: 58px;
+    height: 58px;
+    background-image: url(../images/sprite.png);
+   
+}
+
+.footer .service ul li:nth-child(2) h5{
+    background-position: 0 -58px;
+}
+
+.footer .service ul li:nth-child(3) h5{
+    background-position: 0 -116px;
+}
+
+.footer .service ul li:nth-child(4) h5{
+    background-position: 0 -174px;
+}
+
+.service li p{
+    font-size: 28px;
+    line-height: 58px;
+}
+
+/* 帮助中心 */
+.footer .help{
+    height: 300px;
+    background-color: pink;
+}
+
+/* 版权 */
+.footer .copyright{
+
 }
