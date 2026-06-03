@@ -244,5 +244,30 @@
 
 /* 版权 */
 .footer .copyright{
+    width: 611px;
+    height: 60px;
+}
 
+.footer .copyright .line1{
+    display: flex;
+    justify-content: space-between;
+    /* 让 | 居中 */
+    align-items: center;
+    color: #969696;
+}
+
+.footer .copyright .line1 p{
+    margin: 5px 0;
+}
+
+.footer .copyright .line2 p{
+    display:flex;
+    color: #969696;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.footer .copyright a{
+   color: #969696;
 }
