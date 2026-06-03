@@ -186,8 +186,60 @@
 
 /* 帮助中心 */
 .footer .help{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 60px;
     height: 300px;
-    background-color: pink;
+}
+
+.footer .help .left{
+    display: flex;
+}
+
+.footer .help .left dl{
+    margin-right: 84px;
+}
+
+.footer .help .left dt{
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.footer .help .left dd{
+    margin-bottom: 10px;
+}
+
+.footer .help .left a{
+    font-size: 16px;
+    color: #969696;
+}
+
+.footer .help .left dl:last-child{
+    margin-right: 0;
+}
+
+.footer .help .left .iconfont{
+    color:#5EB69C;
+}
+
+
+.footer .help .rigth ul{
+    display: flex;
+}
+
+.footer .help .rigth li{
+    margin-right:55px;;
+}
+
+.footer .help .rigth .pic{
+    margin-bottom: 10px;
+    width: 120px;
+    height: 120px;
+}
+
+.footer .help .rigth p{
+    color: #969696;
+    text-align: center;
 }
 
 /* 版权 */
