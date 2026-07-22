@@ -214,6 +214,10 @@
 }
 
 
+.bd {
+    margin-top: 20px;
+}
+
 /* 好物内容 --公共样式 */
 .bd ul{
     display: flex;
@@ -250,4 +254,183 @@
 .goods .bd li .txt p span{
     margin-left: 3px;
     font-size: 22px;
+}
+
+.recommend .bd li{
+    background-color: #fff;
+}
+
+.recommend .bd p{
+    color:#A1A1A1;
+}
+
+
+
+/* 热门品牌 */
+.brand{
+    margin-top: 60px; 
+    height: 468px;
+    background-color: #f5f5f5;
+}
+
+.brand .wrapper{
+    overflow: hidden;
+    height: 468px;
+   
+}
+
+.brand .title{
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.brand .button{
+    /* 使得a在一行显示，同时让宽高生效 */
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: -25px;
+}
+
+.brand .button a{
+    margin-left: 12px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+}
+
+.brand .button .prev{
+    background-color: #ddd;
+}
+
+.brand .button .next{
+    background-color: #00be9a;
+}
+
+
+.brand .bd li{
+    width: 244px;
+    height: 306px;
+}
+
+
+/* 生鲜 */
+
+.fresh .title{
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.title .right{
+    display: flex;
+}
+
+.title .right ul{
+    display: flex;
+    margin-top: 10px;
+    margin-right: 58px;
+}
+
+.title .right ul a{
+    display: block;
+    margin-left: 6px;
+    height: 20px;
+    padding: 0 7px;
+    line-height: 20px;  
+}
+
+.title .right ul .active{
+    background-color: #00be9a;
+    color: #fff;
+}
+
+/* 生鲜分类 */
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .left{
+    width: 248px;
+    height: 610px;
+    background-color: pink;
+}
+
+.content .right{
+    position: relative;
+    width: 968px;
+    height: 610px;
+    background-color: #fff;
+}
+
+.content .right ul{
+    overflow: hidden;
+    display: flex;
+    /*  */
+    flex-wrap: wrap;
+}
+
+.content .right li{
+    /* 为了隐藏绿色的cover  */
+    overflow: hidden;
+    position: relative;
+    padding-top: 15px;
+    width: 242px;
+    height: 305px;
+    border: 2px solid #fff;
+    padding: 10px 21px 0;
+
+}
+
+.content .right img{
+    width: 200px;
+    height: 180px;
+}
+
+.content .right .text{
+    height: 60px;
+    margin-bottom: 10px;
+    margin-top: 19px;
+    text-align: center;
+}
+
+.content .right .price{
+    color: red;
+    font-size: 22px; 
+}
+
+.content li .cover{
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: -84px;
+    width: 242px;
+    height: 84px;
+    background-color: #00be9a;
+    color: #fff;
+    padding-top: 15px;
+    transition: all 0.5s;
+}   
+
+.content .cover p:nth-child(1){
+    font-size: 18px;
+}
+
+.content .cover p:nth-child(2){
+    margin: 3px auto 6px;
+    width: 128px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.11);
+}
+
+.content .cover p:nth-child(3)  {
+    font-size: 14px;
+}
+
+/* 鼠标悬停时 */
+
+.content .right li:hover .cover{
+    bottom: 0;
 }
