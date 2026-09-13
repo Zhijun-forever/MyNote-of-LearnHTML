@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age = 18
+        let age2 = 19
+        let temp = age
+        age = age2
+        age2 = temp
+        console.log("age:", age)
+        console.log("age2:", age2)
+
+        //这个是错误写法
+        age,age2 = age2,age
+        console.log("age:", age)
+        console.log("age2:", age2);
+
+        //应该使用数组解构赋值来交换变量的值
+        [age, age2] = [age2, age]
+        console.log("age:", age)
+        console.log("age2:", age2)
+
+    </script>
+</body>
+</html>

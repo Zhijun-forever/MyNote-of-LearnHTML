@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let num = 0;
+        while(num++ < 100){
+            if(num === 10) continue; //跳出本轮循环
+
+            if(num === 20) break; //结束整个循环体
+            document.write("test" + num + "<br>");
+
+        }
+
+        for(let a = 0;a<10;a++){
+            document.write(a);
+        }
+
+        //注意！！！
+        for (var i = 0; i < 3; i++) {
+            setTimeout(function () {
+                console.log(i);
+            }, 100);
+        }
+        // 输出：3 3 3（而不是期望的 0 1 2）
+        //var 是函数作用域（不是块级作用域），
+        // 整个循环只存在一个 i。
+        // 循环结束后 i 变成了 3，
+        // 而三个 setTimeout 回调都在循环结束后才执行，
+        // 它们访问的是同一个 i，所以都是 3。
+
+
+    </script>
+</body>
+</html>

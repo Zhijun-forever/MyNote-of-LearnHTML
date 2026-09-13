@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        /*（区分一下C等，参数列表不需要声明参数类型）
+            这里的默认值写法是当用户没给参数的时候参数的默认值；
+            function 函数名（参数=默认值，参数=默认值...）{
+                代码块
+            }
+        
+        */
+
+    // 打印 1~30
+    function f99(){
+        for(let temp = 1; temp <= 30; temp++){
+            document.write(temp + "这是一个函数" + "<br>");
+        }
+    }
+    f99();
+
+    // 求和
+    function getSum(first, end, d){
+        let res = 0;
+        for(let i = first; i <= end; i += d){
+            res += i;
+        }
+        return res;   // 记得 return
+    }
+
+    document.write("1-10 d=1 的和 = " + getSum(1, 10, 1));
+
+    </script>
+</body>
+</html>

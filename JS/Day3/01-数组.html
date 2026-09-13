@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //数组声明
+        let array1 = [0,1,2.3,3,4];
+        console.log("array1 = " + array1);
+
+
+        let array2 = new Array(1,2,3,4);
+        console.log("array2 = " + array2);
+
+
+        //类似lambda表达式
+        array1.forEach(s => console.log(s));
+
+        //数组求和
+        let sum = 0;
+        array1.forEach(s => sum +=s);
+        console.log(sum);
+
+        //求最大值
+        let max = array1[0];
+        for(let i = 0;i<array1.length; i++){
+            array1[i] > max ? max = array1[i] : max = max;
+        }
+        console.log(max);
+
+
+        //数组的增和删
+        /*
+            arr.push() 将一个元素加到末尾，并返回该数组的长度
+            arr.unshift() 将一个元素加到开头，并返回该数组的长度
+        */
+       
+
+        /*
+            arr.pop() 删除最后一个元素，并返回该元素的值 
+
+            arr.shift() 删除第一个元素.并返回该元素的值,如果为空这返回undefined
+    
+            arr.splice(起始位置，删除元素的个数) 删除指定元素，个数缺省的话则后边的全删掉
+        
+        */
+
+        array1.shift()
+
+    </script>
+</body>
+</html>

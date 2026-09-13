@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var 与 let 的区别演示</title>
+</head>
+<body>
+    <script>
+        /* =========================================================
+           1. 作用域：var 只看函数边界，{} 拦不住它；
+                    let 尊重任何 {} 块
+           ========================================================= */
+        function demoScope() {
+            console.log("=== 1. 作用域 ===");
+
+            {
+                var a = 1;   // var 无视 {}，泄漏到函数内
+                let b = 2;   // let 被 {} 限制
+                console.log("块内 a =", a);  // 1
+                console.log("块内 b =", b);  // 2
+            }
+
+            console.log("块外 a =", a);      // 1，var 泄漏
+            // console.log(b);               // ❌ ReferenceError: b is not defined
+
+            function inner() {
+                if (true) {
+                    var x = 10;   // 属于 inner 函数
+                    let y = 20;   // 属于 if 块
+                }
+                console.log("inner 内 x =", x);  // 10
+                // console.log(y);               // ❌ ReferenceError: y is not defined
+            }
+            inner();
+        }
+        demoScope();
+
+        /* =========================================================
+           2. 变量提升：var 初始化为 undefined；let 有 TDZ
+           ========================================================= */
+        function demoHoisting() {
+            console.log("\n=== 2. 变量提升 ===");
+
+            // var：声明前访问得到 undefined
+            console.log("var 提升：a =", a);  // undefined
+            var a = 1;
+            console.log("赋值后：a =", a);    // 1
+
+            // let：声明前访问会报错（用 try 捕获，避免中断脚本）
+            try {
+                console.log("let 提升：b =", b);
+                let b = 1;
+            } catch (err) {
+                console.log("let 提升报错：", err.message);
+            }
+        }
+        demoHoisting();
+
+        /* =========================================================
+           3. 重复声明：var 允许；let 不允许
+           ========================================================= */
+        function demoRedeclare() {
+            console.log("\n=== 3. 重复声明 ===");
+
+            // var：允许重复声明
+            var a = 1;
+            var a = 2;
+            console.log("var 重复声明后 a =", a);  // 2
+
+            // let：不允许重复声明（语法错误，只能注释演示）
+            // let b = 1;
+            // let b = 2;   // ❌ SyntaxError: Identifier 'b' has already been declared
+            console.log("let 重复声明会报 SyntaxError（见注释）");
+        }
+        demoRedeclare();
+
+        /* =========================================================
+           4. 全局声明差异：var 挂到 window；let 不挂
+              注意：必须在最外层（不在函数内）声明才成立
+           ========================================================= */
+        var globalVar = 1;
+        let globalLet = 2;
+
+        function demoGlobal() {
+            console.log("\n=== 4. 全局声明差异 ===");
+            console.log("window.globalVar =", window.globalVar);  // 1
+            console.log("window.globalLet =", window.globalLet);  // undefined
+        }
+        demoGlobal();
+
+        /* =========================================================
+           5. 循环中的经典坑
+           ========================================================= */
+        function demoLoopVar() {
+            console.log("\n=== 5a. 循环用 var（输出 3 3 3）===");
+            for (var i = 0; i < 3; i++) {
+                setTimeout(() => console.log("var i =", i), 100);
+            }
+        }
+        demoLoopVar();
+
+        function demoLoopLet() {
+            console.log("=== 5b. 循环用 let（输出 0 1 2）===");
+            for (let j = 0; j < 3; j++) {
+                setTimeout(() => console.log("let j =", j), 100);
+            }
+        }
+        demoLoopLet();
+    </script>
+</body>
+</html>

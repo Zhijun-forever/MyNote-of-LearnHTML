@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+             ===== 1. 数据类型 =====
+                1. 基本数据类型（值类型）：
+                    - Number（数字） 不区分整数和浮点数，统一为 Number 类型
+                    Number 类型的范围：
+                    1. 整数：-9007199254740991 ~ 9007199254740991（-2^53 + 1 ~ 2^53 - 1）
+                    2. 浮点数：-1.7976931348623157e
+                    3. NaN（Not a Number）表示不是一个合法的数字
+                    4. Infinity（正无穷大）和 -Infinity（负无穷大）表示超出 Number 类型的范围
+                    5. Number 类型的特殊值：
+                        - NaN：表示不是一个合法的数字
+                        - Infinity：表示正无穷大
+                        - -Infinity：表示负无穷大
+                    
+                    Number占用 8 个字节（64 位），其中 1 位用于符号，11 位用于指数，52 位用于尾数。
+                    - BigInt（大整数）ES2020 新增，表示任意精度的整数类型，可以表示大于 2^53 - 1 的整数。
+                    1. BigInt 类型的范围：任意精度的整数类型，可以表示大于 2^53 - 1 的整数。
+                    
+
+
+                    
+                    - String（字符串）
+                    - Boolean（布尔）
+                    - null
+                    - undefined
+                    - Symbol（ES6 新增）
+
+                2. 引用数据类型（对象类型）：
+                    - Object（对象）
+        */
+
+
+        let num = 123; // Number 类型
+        let str = "Hello"; // String 类型
+        let bool = true; // Boolean 类型
+        let n = null; // null 类型
+        let u; // undefined 类型
+        let sym = Symbol("sym"); // Symbol 类型
+        let bigInt = 123n; // BigInt 类型
+        
+
+
+
+        /*
+            算数运算符：
+                +  -  *  /  %  **（幂运算）
+
+                先加减后乘除，有括号先算，括号内的运算优先级最高。
+        
+            这个就不写例子了，因为实在太简单了，不能低估自己的智商
+        */
+
+
+        let r = prompt("请输入圆的半径：");
+        let area = 3.14 * r * r;
+        alert("圆的面积是：" + area);
+
+
+        //Nan （Not a Number）表示不是一个合法的数字
+        let a = 10 / "abc"; // 10 除以一个字符串，
+        console.log("10 / abc = " + a); // 输出 NaN
+
+        //Nan的特点：
+        // 1. NaN 是一个特殊的数字类型，表示不是一个合法的数字。
+        // 2. NaN 与任何值都不相等，包括它自己。
+        console.log("NaN == NaN: " + (NaN == NaN));
+        // 3. 可以使用 isNaN() 函数来判断一个值是否为 NaN。
+        console.log("isNaN(NaN): " + isNaN(NaN));
+        // 4. 可以使用 Number.isNaN() 函数来判断一个值是否为 NaN。
+        console.log("Number.isNaN(NaN): " + Number.isNaN(NaN));
+        // 5. 可以使用 Object.is() 函数来判断两个值是否相等，包括 NaN。
+        console.log("Object.is(NaN, NaN): " + Object.is(NaN, NaN));
+        // 6. 可以使用 typeof 运算符来判断一个值的类型，NaN 的类型是 number。
+        console.log("typeof NaN: " + typeof NaN);
+        // 7. 对Nan进行任何运算都会得到NaN
+        let b = NaN + 1; // NaN + 1 = NaN
+        console.log("NaN + 1 = " + b);
+
+
+        //string（字符串）是由零个或多个字符组成的有限序列。字符串可以使用单引号、双引号或反引号（ES6 新增）来表示。
+        let str1 = "Hello"; // 双引号
+        let str2 = 'World'; // 单引号
+        let str3 = `Hello World`; // 反引号
+        let str4 = "" // 空字符串
+
+        //可以使用转义字符来表示特殊字符，比如换行符、制表符、引号等。
+        document.write("\"这是一个字符串\" ");
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //prompt()方法接收的默认是一个字符串类型的参数，表示提示信息
+        let userInput = prompt("请输入您的姓名：");
+        console.log(userInput);
+        console.log(typeof userInput);
+
+        //类型转换
+        //1.字符串类型转为数值类型
+        let str = "123";
+        let num = Number(str);
+        console.log(num);
+        console.log(typeof num);
+
+        //2.数值类型转为字符串类型
+        let num2 = 456;
+        let str2 = String(num2);
+        console.log(str2);
+        console.log(typeof str2);
+
+
+        //3.布尔类型转为字符串类型
+        let bool = true;
+        let str3 = String(bool);
+        console.log(str3);
+        console.log(typeof str3);
+
+
+        //4.字符串类型转为布尔类型
+        let str4 = "false";
+        let bool2 = Boolean(str4);
+        console.log(bool2);
+        console.log(typeof bool2);
+
+        //5.数值类型转为布尔类型
+        let num3 = 0;
+        let bool3 = Boolean(num3);
+        console.log(bool3);
+        console.log(typeof bool3);
+
+        //隐式转换
+        console.log(1 + "2"); // "12"
+        console.log(1 + true); // 2
+        console.log(1 + 1); // 2
+
+        console.log(2 - '2'); // 0
+        console.log(2 * '2'); // 4
+        console.log(2 / '2'); // 1
+
+        console.log(typeof +'2'); // number
+
+
+        //显式转换
+        let str0 = '123';
+        let num0 = Number(str0);
+        console.log(num0);
+        console.log(typeof num0);
+
+
+        
+    </script>
+</body>
+</html>
