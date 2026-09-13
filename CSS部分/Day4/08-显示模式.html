@@ -5,57 +5,48 @@
 添加宽高属性生效  
 -->
 
-
-
-
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>显示模式</title>
     <style>
-        div{
-            width: 100px;
-            height: 100px;
-        }
-        .div1{
-            background-color: red;
-        }
-        .div2{
-            background-color: yellow;
-        }
-        /* 行内:一行可以共存多个,尺寸由内容撑开 加宽高 不生效*/
-        span{
-            width: 200px;
-            height: 200px;
-        }
+      div {
+        width: 100px;
+        height: 100px;
+      }
+      .div1 {
+        background-color: red;
+      }
+      .div2 {
+        background-color: yellow;
+      }
+      /* 行内:一行可以共存多个,尺寸由内容撑开 加宽高 不生效*/
+      span {
+        width: 200px;
+        height: 200px;
+      }
 
-        /* 行内块:一行共存多个,默认尺寸由内容撑开,价宽高生效 */
-        img{
-            width: 100px;
-            height: 100px;
-        }
-
+      /* 行内块:一行共存多个,默认尺寸由内容撑开,价宽高生效 */
+      img {
+        width: 100px;
+        height: 100px;
+      }
     </style>
-
-
-</head>
-<body>
+  </head>
+  <body>
     <!-- 块元素 -->
     <div class="div1">div标签1</div>
     <div class="div2">div标签2</div>
 
     <!-- 行内元素 -->
-     <span>span11111</span>
-     <span>span2</span>
+    <span>span11111</span>
+    <span>span2</span>
 
     <!-- 行内块元素 -->
 
-    <img src="../Images/01.jpg" alt="">
-    <img src="../Images/01.jpg" alt="">
-
-</body>
+    <img src="../../Images/01.jpg" alt="" />
+    <img src="../../Images/01.jpg" alt="" />
+  </body>
 </html>

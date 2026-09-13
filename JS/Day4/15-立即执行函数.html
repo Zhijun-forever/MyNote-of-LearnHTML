@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        // (function(){})()
+        // (function(){}())
+
+        ;(function(){
+            document.write("立即执行函数调用")
+        })();
+
+        (function(x,y){
+            console.log(x + y)
+        })(1,2);
+
+
+        //这个可以隔离环境，防止变量污染，还能解决var穿透问题
+
+        for (var i = 0; i < 3; i++) {
+            (function (j) {
+            setTimeout(function () {
+                console.log(j);   // 0 1 2 ✅
+            }, 100);
+            })(i);
+        }   
+
+    </script>
+</body>
+</html>

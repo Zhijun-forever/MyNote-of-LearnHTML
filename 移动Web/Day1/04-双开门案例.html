@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .father{
+            overflow: hidden;
+            display: flex;
+            width: 1000px;
+            height: 500px;
+            background-color: pink;
+        }
+
+        .father .sonright{
+            transition: all 1.8s;
+            width: 500px;
+            height: 500px;
+            background-color: rgb(12, 30, 228);
+            background-image: url(../../Images/Day3-综合案例.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .father .sonleft{
+            transition: all 1.8s;
+            width: 500px;
+            height: 500px;
+            background-image: url(../../Images/Day3-综合案例.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }   
+
+        .father:hover .sonleft{
+            transform: translate(-100%);
+        }
+
+        .father:hover .sonright{
+            transform: translate(100%);
+        }
+
+        /* 1.布局：父子结构，父级为大图，子集为左右小图 */
+    </style>
+</head>
+
+
+<body>
+    <div class="father">
+        <div class="sonleft"></div>
+        <div class="sonright"></div>
+    </div>
+</body>
+</html>
