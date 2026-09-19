@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 便利对象，这里使用增强for
+
+      //对象数组
+    let student = [
+      { name:"小明1", age: 20, gender: "男", hometown: "河北省"},
+      { name:"小明2", age: 20, gender: "男", hometown: "河北省"},
+      { name:"小明3", age: 20, gender: "男", hometown: "河北省"},
+      { name:"小明4", age: 20, gender: "男", hometown: "河北省"},
+    ]
+
+    for(let i =0;i < student.length;i++){
+      console.log(student[i]);
+    }
+
+    for(let i =0;i < student.length;i++){
+      console.log(student[i].name);
+      
+    }
+
+    let obj = {
+      var1: 1,
+      var2: 2,
+      var3: 3,
+      var4: 4,
+      var5: 5,
+      var6: 6,
+    };
+
+      for (let i in obj) {
+        // 这个是输出变量名字
+        console.log(i);
+        // 这个输出变量的值
+        console.log(obj[i]);
+
+        // 这个是错误的，因为 obj.i 里的 i 被当成了字面量属性名，而不是变量
+        // 每次都找 obj["i"]，但 obj 没有 i 属性，所以 undefined
+        console.log(obj.i);
+      }
+
+      // 使用forEach遍历，注意，forEach 只遍历数组
+      const obj2 = {
+        array: [1, 2, 3],
+        name: 111,
+      };
+
+      obj2.array.forEach((element) => {
+        document.write(element);
+      });
+    </script>
+  </body>
+</html>

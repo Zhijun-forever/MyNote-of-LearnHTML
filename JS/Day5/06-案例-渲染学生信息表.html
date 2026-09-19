@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>遍历对象数组</title>
+</head>
+
+    <style>
+
+
+        table tr:nth-child(1) {
+            background-color: #ddd;
+        }
+
+        table tr:not(:first-child):hover{
+            background-color: #eee;
+        }
+
+    </style>
+
+
+<body>
+
+    <h2>学生信息渲染中</h2>
+    <p>将数据渲染到页面中...</p>
+
+    <table border="1">
+        <caption>学生列表</caption>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>
+
+        <script>
+        let StudentList = [
+            {No:1,Name:"小明",Age:13,Gender:"男",HomeTown:"河北省"},
+            {No:2,Name:"小红",Age:14,Gender:"女",HomeTown:"湖南省"},
+            {No:3,Name:"小张",Age:15,Gender:"女",HomeTown:"北京省"},
+            {No:4,Name:"小李",Age:17,Gender:"男",HomeTown:"河南省"},
+            {No:5,Name:"小刚",Age:16,Gender:"男",HomeTown:"广东省"},
+        ]
+        for(let i=0;i<StudentList.length;i++){
+            document.write(`
+            <tr>
+            <td>${StudentList[i].No}</td>
+            <td>${StudentList[i].Name}</td>
+            <td>${StudentList[i].Age}</td>
+            <td>${StudentList[i].Gender}</td>
+            <td>${StudentList[i].HomeTown}</td>
+            </tr>
+            `)
+        }
+        </script>
+    </table>
+        
+
+
+    
+</body>
+</html>

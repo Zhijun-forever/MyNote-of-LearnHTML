@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // 对象声明
+        let obj1 = {
+            // 这个不打引号，‘-’会被错误解析
+            "手机号-telphone":11231,
+            uname:"pink老师",
+            age:18,
+            gender:"女"
+        };
+        let obj2  = new Object();
+
+        console.log(obj1);
+        document.write(typeof obj1 + "<br>");  
+
+        // 获得成员变量
+        document.write(typeof obj1.age);
+        // 这个是第二个查询的方法，obj["成员变量"]
+        console.log(obj1['手机号-telphone']);
+        
+
+        // 增加成员(这点和Java，cpp不一样)
+        obj1.added = "新增属性";
+        console.log(obj1);
+
+        // 删除成员(一般不这样做)
+        delete obj1.added;
+        console.log(obj1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            overflow: hidden;
+            width: 600px;
+            height: 600px;
+            margin: 100px auto;
+            background-color: pink;
+            
+        }
+
+        img{
+            
+            margin: 50px;
+
+            width: 500px;
+            height: 500px;
+            transition: all 1s;
+        }
+
+        .box:hover img{
+            /* 如果通过宽高尺寸来缩放，缩放中心默认为左上角 */
+            /* 效果不好 */
+            /* width: 600px; */
+            /* height: 600px; */
+
+
+            transform: scale(2);
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <img src="../../Images/01.jpg" alt="">
+    </div>
+
+
+    <script>
+        /**
+         *      transform:scale(缩放倍数)
+         *      
+         *      transform:scale(x轴缩放倍数,y轴缩放倍数)
+         * 
+         *      通常只为scale设置一个值,表示等比例缩放
+         *      取值大于一:放大
+         *      取值小于一:缩小
+         *      取值等于一:不变
+         * 
+         **/
+    </script>
+</body>
+</html>
