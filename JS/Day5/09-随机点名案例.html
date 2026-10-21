@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点名案例</title>
+</head>
+<body>
+    
+    <script>
+        let arr = ['张三','李四','王五','赵六','钱七'];
+        // 得到一个随机数
+        let random = parseInt(Math.random()*arr.length);
+        //注意，这个无法去重，抽到过的还是有机会
+        document.write(arr[random]); 
+        
+        // 将已经抽到的删除,不过这里只是模拟，真正的删除等学到DOM操作再说
+        arr.splice(random,1);
+        console.log(arr);
+
+
+    </script>
+</body>
+</html>

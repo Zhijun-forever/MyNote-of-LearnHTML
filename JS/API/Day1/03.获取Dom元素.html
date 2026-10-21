@@ -1,0 +1,87 @@
+<!-- 
+ 
+1.选择匹配的第一个元素
+    document.querySelector('CSS选择器');
+
+    返回匹配的第一个元素节点对象（HtmlElement），如果没有匹配的元素，则返回null
+
+2.选择匹配的所有元素
+    document.querySelectorAll('CSS选择器');
+
+    返回所有匹配的元素节点对象（HtmlElement），如果没有匹配的元素，则返回空的NodeList集合
+-->
+
+
+<!-- 
+    其他获取DOM元素的方法：
+    
+    1.根据ID获取一个元素
+    document.getElementById('nav')
+
+    2.根据标签获取一类元素 
+    document.genElementsByTagName('div')
+
+    3.根据类名获取元素
+    document.getElementsByClassName('W')
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">123</div>
+    <div class="box">abc</div>
+    <p id="nav">导航</p>
+    <ul class="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+<script>
+    const box = document.querySelector('.box');
+    console.log(box);
+    
+    const nav = document.querySelector('#nav');
+    console.log(nav);
+
+    //拿到的元素可以直接修改
+    nav.style.color = 'red'
+
+    //返回第一个li元素
+    const li = document.querySelector('ul li');
+    console.log(li);
+
+    // 未匹配到
+    const p = document.querySelector('p');
+    console.log(p);
+
+    //返回所有的li
+    const lis = document.querySelector('.nav li');
+    console.log(lis);
+    console.log(Array.from(lis));
+
+    /**
+     *  其实这样获得的是一个伪数组，无法使用pop,push等方法，有长度但有索引
+     *  可以使用一下方法转化为真数组
+     *  const arr = Array.from(fakeArray);
+     * 
+     * */
+
+
+    //1.获取元素
+    const lis2 = document.querySelectorAll('.nav li');
+    console.log(lis2);
+    for(let i = 0;i<lis2.length;i++){
+        console.log(lis2[i]); //打印每一个li
+    }
+
+</script>
+</body>
+</html>

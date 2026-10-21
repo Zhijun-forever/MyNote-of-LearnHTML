@@ -1,0 +1,38 @@
+<!-- 
+    
+innerText:
+    将文本内容添加/更新到任意标签位置
+    显示纯文本，不解析标签
+
+innerHTML:
+    将文本内容添加/更新到任意标签位置
+    会解析标签，多标签建议使用模板字符串
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">我是文字的内容</div>
+
+<script>
+    const box = document.querySelector('.box');
+
+    //根据 对象.innerText 属性 修改元素内容
+    console.log(box.innerText)  //获取文字内容
+    box.innerText = '<strong>我是一个盒子</strong>';  //修改文字内容，不解析标签
+
+
+    //innerHTML 解析标签
+    console.log(box.innerHTML);
+    box.innerHTML = '<strong>我是一个盒子</strong>';
+
+
+</script>
+</body>
+</html>
