@@ -1,0 +1,54 @@
+<!-- 
+定时器：间歇函数：能够使用定时器函数重复执行代码
+定时器可以开始和关闭定时器
+
+1.开启定时器
+    setInterval(函数，间隔时间（ms）)
+    定时器返回一个id数字，因为页面中不只有一个定时器
+
+2.关闭定时器
+    let 变量名 = setInterval(函数，间隔时间);
+    clearInterval(变量名);
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    //setInterval()
+    // setInterval(function(){console.log('一秒执行一次')},1000);
+
+    // function fn(){
+    //     console.log("一秒执行一次");
+    // }
+    // setInterval(fn,1000);
+
+    // let n = setInterval(fn,1000);
+    // console.log(n);
+
+    //关闭定时器
+    // clearInterval(n);
+
+
+    //用户倒计时效果
+    let i = 1;
+    setInterval(function(){
+        i++;
+        document.write(i);
+        if(i%20 == 0){
+            document.write(`<br>`)
+        }
+    },5)
+
+
+</script>
+</body>
+</html>

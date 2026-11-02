@@ -1,0 +1,62 @@
+<!-- 
+老版本的事件监听：
+    version1:  事件源.on事件 = function(){}
+    version2:  事件源.addEventListener(事件，事件处理函数);
+区别：on方式会被覆盖，addEventListener方式可绑定多次，
+     拥有事件的更多特性，推荐使用
+
+--> 
+
+<!-- 
+
+
+鼠标事件：click 点击
+         mouseenter 鼠标经过
+         mouseleave 鼠标离开
+
+
+焦点事件：focus 获得焦点
+         blur 失去焦点
+
+
+键盘事件：keydown  键盘按下触发
+         keyup 键盘抬起触发
+    
+文本事件：input 用户输入事件
+
+
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+<script>
+    const div = document.querySelector('div');
+    div.addEventListener('mouseenter',function(){
+        console.log('我来了');
+        
+    })
+    div.addEventListener('mouseleave',function(){
+        console.log('我走了');
+        
+    })
+</script>
+</body>
+</html>

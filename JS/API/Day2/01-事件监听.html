@@ -1,0 +1,38 @@
+ <!-- 
+
+ 事件监听：检测是否有事件发生，一旦有事件发生，就立即调用一个函数做出响应 也称注册事件；
+
+ 语法：
+    元素对象.addEventListener('事件类型',要执行的函数) 
+ 
+事件监听三要素：
+    1.事件源（事件发生的对象）
+    2.事件类型（比如鼠标单击click，鼠标经过mouseover）
+    3.事件调用的函数
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>click</button>
+
+<script>
+    let btn = document.querySelector('button');
+    btn.addEventListener('click',function(){
+        alert("Has clicked!");
+    })
+
+</script>
+</body>
+</html>
+
+
+
