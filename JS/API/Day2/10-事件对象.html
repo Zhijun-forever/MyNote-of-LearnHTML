@@ -1,0 +1,36 @@
+<!-- 
+ 
+事件对象：在事件绑定的回调函数的第一个参数就是事件的对象
+
+元素.addEventListener('click',function(e)); --这里的e就是事件对象
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+
+    <input type="text" name="" id="">
+
+<script>
+    const btn = document.querySelector('button');
+    btn.addEventListener('click',function(e){
+        console.log(e);
+    })
+
+    const input = document.querySelector('input[type = text]');
+    input.addEventListener('keyup',function(e){
+        if(e.key == "Enter"){
+            console.log("按下了回车");
+        }
+    })
+</script>
+</body>
+</html>
