@@ -1,0 +1,25 @@
+<!-- 
+当初始的HTML文档被完全加载和解析完成之后，DOMContentLoaded事件被触发，而无需等待样式表，图像等完全加载
+
+事件名：DOMContentLoaded
+
+监听页面DOM加载完毕：
+    给document添加DOMContentLoad事件
+    document.addEventListener('DOMContentLoaded',function());
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            alert('aaa');
+        })
+    </script>
+</body>
+</html>

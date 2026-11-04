@@ -1,0 +1,29 @@
+<!-- 
+ 某些情况下要阻止默认行为的发生，比如阻止链接的跳转
+ 语法： e.proventDefault()
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <form action="#">
+        <input type="submit" value="免费注册">
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+        })
+    </script>
+
+</body>
+</html>

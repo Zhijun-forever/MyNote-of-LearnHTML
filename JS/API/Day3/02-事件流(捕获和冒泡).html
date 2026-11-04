@@ -1,0 +1,67 @@
+<!-- 
+事件流是指事件完整执行过程中的流动路径
+
+比如：
+捕获：Document -> Element HTML -> Element body -> Element div
+从DOM跟元素开始去执行对应的事件(从外到里)
+
+冒泡：Element div -> Element body -> Element HTML -> Document
+当一个元素的事件被触发时,同样的事件 将会在该元素的所有祖先元素中依次被触发,这一事件称为冒泡
+
+
+语法：
+    DOM.addEventListener(事件类型,事件处理函数,是否使用捕获机制(bool));
+    捕获机制缺省则代表false；
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+<script>
+
+    const father = document.querySelector('.father');
+    const son = document.querySelector('.son');
+
+    document.addEventListener('click',function(){
+        alert('我是爷爷');l    
+    })
+
+    father.addEventListener('click',function(){
+        alert('我是爸爸');
+    })
+
+    son.addEventListener('click',function(){
+        alert('我是儿子');
+    })
+
+
+// ———————————————————————————————————————————————————— 
+
+
+
+</script>
+</body>
+</html>

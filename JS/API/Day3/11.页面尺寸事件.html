@@ -1,0 +1,40 @@
+<!-- 
+页面尺寸事件会在窗口尺寸改变的时候触发事件：
+ window.addEventListener('resize',function())
+
+ 
+ 获取宽高：clientWidth 和 clientHeight
+ 获取元素的可见部分的宽高，不包含边框，margin，滚动条等
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            border: 20px solid red;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+    <script>
+        const div = document.querySelector('div');
+        console.log(div.clientWidth)
+        window.addEventListener('resize',function(){
+            console.log(1);
+            
+        })
+    </script>
+</body>
+</html>

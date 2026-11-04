@@ -1,0 +1,50 @@
+<!-- 
+加载外部加载资源完成时触发的事件
+
+事件名：load
+
+监听页面所有资源加载完毕：
+    给window添加load事件
+    window.addEventListener('load',function());
+
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.addEventListener("load", function () {
+        alert("加载完成");
+        document.querySelector("button").addEventListener("click", function () {
+          alert("click");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <button>click</button>
+  </body>
+</html>
+
+
+<!--     这个会无法触发 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script async>
+        document.querySelector('btn').addEventListener('click',function(){
+            alert('提示')
+        })
+    </script>
+</head>
+<body>
+    <button>click</button>
+</body>
+</html> -->

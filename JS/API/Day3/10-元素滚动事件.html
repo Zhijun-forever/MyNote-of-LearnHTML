@@ -1,0 +1,115 @@
+<!-- 
+滚动条在滚动的时候持续触发的事件
+
+事件名：scroll
+
+监听整个页面的滚动
+
+介绍两个属性：
+scrollLeft 和 scrollTop
+获取被卷去的大小
+获取元素内容往上，左滚出去看不到的距离
+这两个值时可读写的
+
+
+scrollTo()方法可以把内容滚动到指定的坐标
+语法：
+    元素.scrollTo(x坐标,y坐标);
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            box-sizing: border-box;
+            height: 3000px;
+        }
+
+        div{
+            display: none;
+            margin: 50% 50%;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+        dddd
+    </div> 
+    <script>
+        window.addEventListener('scroll',function(){
+            // console.log('滚动事件触发');
+            // console.log(document.documentElement.scrollTop);
+
+            document.documentElement.scrollTop = 80;
+        
+
+            const div = document.querySelector('div');
+            const n = document.documentElement.scrollTop;
+            if(n>=40){
+                div.style.display = 'block';
+            }else{
+                div.style.display = 'none';
+            }
+        })
+    </script>
+</body>
+</html>
