@@ -1,0 +1,36 @@
+<!-- 
+获取位置：
+    element.getBoundingClientRect()
+    返回元素的大小及其相对于视口的位置
+    
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        const div = document.querySelector('div');
+        window.addEventListener('scroll',function(){
+            console.log(div.getBoundingClientRect());
+        })
+        
+    </script>
+</body>
+</html>

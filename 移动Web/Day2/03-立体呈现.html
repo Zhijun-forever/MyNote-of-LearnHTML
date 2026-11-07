@@ -1,0 +1,67 @@
+<!-- 
+作用：设置元素的子元素是位于3d空间中还是平面中
+属性名字：transform-style
+属性值：
+    flat：子级处于平面
+    preserve-3d：子级处于3D空间
+
+
+步骤：
+1.父元素添加transform-style：preserve-3d
+2.子级定位
+3.调整子盒子的位置
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cube{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+            /* background-color: pink; */
+            transition: all 2s;
+
+            transform-style: preserve-3d;
+
+            /* transform: rotateY(89deg); */
+
+        }
+
+        .cube:hover{
+            transform: rotateY(90deg);
+        }
+
+        .cube div{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+
+        }
+
+        .front{
+            transform: translateZ(100px);
+            background-color: orange;
+        }
+
+        .back{
+            transform: translateZ(-100px);
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="front">前面</div>
+        <div class="back">后边</div>
+    </div>
+</body>
+</html>

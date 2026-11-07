@@ -1,0 +1,61 @@
+<!-- 
+获取宽高：
+获取元素的自身宽高，包含元素自身设置的宽高，padding，border
+offesetWidth 和 offsetHeight
+获取出来的是数值
+
+注意：获取的是可视宽高，如果盒子是隐藏的，获取的结果是0；
+
+获取位置：
+获取元素距离自己定位父级元素的左，上距离
+
+offesetLeft 和 offsetTop 是只读属性
+
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin:100px;
+        }
+        .son{
+            position: relative;
+            left: 10px;
+            top:10px;
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="son"></div>
+    </div>
+
+    <script>
+        const div = document.querySelector('.box');
+        console.log(div.offsetLeft);
+        console.log(div.offsetTop);
+
+        //这个会收到定位父级的影响，获得到的是到他最近的父级的距离
+        const son = document.querySelector('.son');
+        console.log(son.offsetLeft);
+        console.log(son.offsetTop);
+        
+        
+    </script>
+</body>
+</html>

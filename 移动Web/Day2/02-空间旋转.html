@@ -1,0 +1,34 @@
+<!-- 
+transform:rotateZ(x deg)
+transform:rotateX(x deg)
+transform:rotateY(x deg)
+transform:rotate3d(x,y,z) 这里三个参数取0-1
+
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 200px auto;
+        }
+        div:hover{
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transition: all 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div>aaa</div>
+</body>
+</html>

@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script async>
-        document.querySelector('btn').addEventListener('click',function(){
-            alert('提示')
-        })
-    </script>
-</head>
-<body>
-    <button>click</button>
-</body>
-</html>
+<div id="box"><!-- 注释 --><p>Hello</p>纯文本<span>World</span></div>
+
+
+<script>
+  const box = document.getElementById('box');
+
+console.log(box.childNodes.length); // 4
+
+box.childNodes.forEach((node, i) => {
+  console.log(
+    i,
+    node.nodeType,
+    node.nodeName,
+    JSON.stringify(node.textContent)
+  );
+});
+</script>

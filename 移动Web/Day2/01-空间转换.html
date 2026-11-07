@@ -1,0 +1,41 @@
+<!-- 
+属性:transform
+
+translate3d(x,y,z);
+transformX()
+transformY()
+transformZ()  z轴方向要看起来有效果需要添加视距perspective
+
+视距属性添加给直接父级,取值范围一般给800-1200即可
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 200px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            transition: all 0.5s;
+        }
+
+        .box:hover{
+            transform: translate3d(100px,100px,100px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

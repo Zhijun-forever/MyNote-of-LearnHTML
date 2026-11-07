@@ -1,0 +1,43 @@
+
+<!-- 
+在JavaScript原生DOM操作中，要删除元素必须通过父元素删除
+
+语法：父元素.removeChild(要删除的元素)
+
+注意：如果不存在父子关系则删除不成功
+      
+删除节点和隐藏节点（display：none）有区别：
+  删除则直接从HTML中移除
+  隐藏还是会存在
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">123</div>
+  <ul>
+    <li>没用了</li>
+  </ul>
+  <script>
+    const ul = document.querySelector('ul')
+    // 删除节点  父元素.removeChlid(子元素)
+    ul.removeChild(ul.children[0])
+  </script>
+</body>
+
+</html>

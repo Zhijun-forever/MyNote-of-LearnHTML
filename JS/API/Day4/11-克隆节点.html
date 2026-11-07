@@ -1,0 +1,39 @@
+<!-- 
+克隆节点：
+
+语法：元素.cloneNode(boolean)
+ true:克隆是会包含后代一起克隆
+ false：克隆时不包含后代节点
+ 默认false
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    const ul = document.querySelector('ul')
+    // 1 克隆节点  元素.cloneNode(true)
+    // const li1 = ul.children[0].cloneNode(true)
+    // console.log(li1)
+    // 2. 追加
+    ul.appendChild(ul.children[0].cloneNode(true))
+    ul.appendChild(ul.children[0].cloneNode(false)) //如果为false只克隆出标签，浅克隆
+    ul.insertBefore(ul.children[1].cloneNode(true),ul.children[0])
+  </script>
+</body>
+
+</html>

@@ -1216,9 +1216,9 @@
   </div>
 
   <script>
-    const elevator = document.querySelector('.xtx-elevator');
-
-    window.addEventListener('scroll',function(){
+    (function(){
+      const elevator = document.querySelector('.xtx-elevator');
+      window.addEventListener('scroll',function(){
       const n = document.documentElement.scrollTop;
       if(n >= 300){
         elevator.style.opacity = 1;
@@ -1226,11 +1226,41 @@
         elevator.style.opacity = 0;
       }
     })
+    })();
+    
 
-    const backTop = document.querySelector('a#backTop');
-    backTop.addEventListener('click',function(){
+    (function(){
+      const backTop = document.querySelector('a#backTop');
+      backTop.addEventListener('click',function(){
       document.documentElement.scrollTop = 0;
     })
+    })();
+
+    (function(){
+      const list = document.querySelector('.xtx-elevator-list');
+
+      list.addEventListener('click',function(e){
+         if(e.target.tagName === "A"){
+          const old = document.querySelector('.xtx-elevator-list .active')
+          if(old) old.classList.remove('active');
+
+          e.target.classList.add('active');
+         }
+
+        const top = document.querySelector(`.xtx_goods_${e.target.dataset.name}`).offsetTop;
+
+        // document.documentElement.scrollTop = top;
+
+
+        //平滑滚动
+        window.scrollTo({ top: top, behavior: 'smooth' });
+
+        
+
+      })
+    })()
+
+    
 
   </script>
 </body>
