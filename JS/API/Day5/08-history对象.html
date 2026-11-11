@@ -1,0 +1,46 @@
+<!-- 
+history的数据类型是对象，主要管理历史记录，该对象和浏览器地址栏 
+的操作相对应，比如前进后退，历史记录等
+
+方法：
+back()   向后退一个页面
+
+
+forward()   向前前进一个页面
+
+
+go(参数) 前进后退功能，n（n>0）则向前跳转n个页面，-n则向后跳转n个页面，n = 0 则刷新当前页面
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>后退</button>
+  <button>前进</button>
+  <script>
+    const back = document.querySelector('button:first-child')
+    const forward = back.nextElementSibling
+    back.addEventListener('click', function () {
+      // 后退一步
+      // history.back()
+      history.go(-1)
+    })
+    forward.addEventListener('click', function () {
+      // 前进一步
+      // history.forward()
+      history.go(1)
+    })
+  </script>
+</body>
+
+</html>

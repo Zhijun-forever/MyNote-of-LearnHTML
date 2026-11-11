@@ -1,0 +1,46 @@
+<!-- 
+JavaScript语言的一大特点就是单线程,也就是说,同一个时间只能做一件事。
+
+这是因为Javascript这门脚本语言诞生的使命所致 -- JavaScript是为处理页面中用户的交互,以及操作
+DOM而诞生的。比如我们对某个DOM元素进行添加和删除操作,不能同时进行。应该先进行添加,之后
+再删除。
+
+单线程就意味着,所有任务需要排队,前一个任务结束,才会执行后一个任务。这样所导致的问题是:如
+果JS执行的时间过长,这样就会造成页面的渲染不连贯,导致页面渲染加载阻塞的感觉。
+
+
+
+JS执行机制：
+1.先执行执行栈中的同步任务。
+
+2.异步任务放入任务队列中。
+
+3.一旦执行栈中的所有同步任务执行完毕,系统就会按次序读取任务队列中的异步任务,于是被读取的异步任务结束等待状
+态,进入执行栈,开始执行。
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    console.log(1)
+    console.log(2)
+    window.addEventListener('click',function(){
+      console.log('5');
+    })
+    setTimeout(function () {
+      console.log(3)
+    }, 0)
+    console.log(4);
+  </script>
+</body>
+
+</html>

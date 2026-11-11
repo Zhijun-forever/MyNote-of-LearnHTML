@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>学生信息管理</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <h1>新增学员</h1>
+    <form class="info" autocomplete="off">
+      姓名：<input type="text" class="uname" name="uname" />
+      年龄：<input type="text" class="age" name="age" />
+      性别:
+      <select name="gender" class="gender">
+        <option value="男">男</option>
+        <option value="女">女</option>
+      </select>
+      薪资：<input type="text" class="salary" name="salary" />
+      就业城市：
+      <select name="city" class="city">
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="广州">广州</option>
+        <option value="深圳">深圳</option>
+        <option value="曹县">曹县</option>
+      </select>
+      <button class="add">录入</button>
+    </form>
+
+    <h1>就业榜</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>学号</th>
+          <th>姓名</th>
+          <th>年龄</th>
+          <th>性别</th>
+          <th>薪资</th>
+          <th>就业城市</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      const uname  = document.querySelector('.uname');
+      const age    = document.querySelector('.age');
+      const gender = document.querySelector('.gender');
+      const salary = document.querySelector('.salary');
+      const city   = document.querySelector('.city');
+      const info   = document.querySelector('.info');
+      const tbody  = document.querySelector('tbody');
+
+      const STORAGE_KEY = 'student-list';
+      const START_ID = 1001;
+
+      // ---------- 数据 ----------
+      let arr = load();
+      let nextId = getNextId();
+
+      function load() {
+        try {
+          return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        } catch {
+          return [];
+        }
+      }
+      function save() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+      }
+      function getNextId() {
+        if (!arr.length) return START_ID;
+        return Math.max(...arr.map(s => s.stuId)) + 1;
+      }
+
+      // ---------- 工具 ----------
+      function escapeHtml(str) {
+        return String(str).replace(/[&<>"']/g, c => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[c]));
+      }
+
+      // ---------- 录入 ----------
+      info.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name      = uname.value.trim();
+        const ageVal    = age.value.trim();
+        const salaryVal = salary.value.trim();
+
+        if (!name) {
+          alert('请输入姓名');
+          return uname.focus();
+        }
+        if (!/^\d+$/.test(ageVal) || +ageVal < 1 || +ageVal > 150) {
+          alert('年龄需为 1~150 的整数');
+          return age.focus();
+        }
+        if (!/^\d+(\.\d+)?$/.test(salaryVal) || +salaryVal < 0) {
+          alert('薪资需为非负数字');
+          return salary.focus();
+        }
+
+        arr.push({
+          stuId: nextId++,
+          uname: name,
+          age: +ageVal,
+          gender: gender.value,
+          salary: +salaryVal,
+          city: city.value
+        });
+
+        save();
+        this.reset();      // 只重置表单
+        render();
+      });
+
+      // ---------- 删除（事件委托） ----------
+      tbody.addEventListener('click', function (e) {
+        const link = e.target.closest('.del');
+        if (!link) return;
+
+        const id = Number(link.dataset.id);
+        if (!confirm(`确定删除学号 ${id} 的学员吗？`)) return;
+
+        arr = arr.filter(s => s.stuId !== id);
+        save();
+        render();
+      });
+
+      // ---------- 渲染 ----------
+      function render() {
+        tbody.innerHTML = '';
+
+        if (!arr.length) {
+          tbody.innerHTML = `<tr><td colspan="7" class="empty">暂无数据，请先录入</td></tr>`;
+          return;
+        }
+
+        arr.forEach(item => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${item.stuId}</td>
+            <td>${escapeHtml(item.uname)}</td>
+            <td>${item.age}</td>
+            <td>${escapeHtml(item.gender)}</td>
+            <td>${item.salary}</td>
+            <td>${escapeHtml(item.city)}</td>
+            <td><a href="javascript:" class="del" data-id="${item.stuId}">删除</a></td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      render(); // 初始化
+    </script>
+  </body>
+</html>

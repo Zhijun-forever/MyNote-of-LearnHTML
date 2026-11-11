@@ -1,0 +1,39 @@
+<!-- 
+
+延时函数：
+
+语法：setTimeout(回调函数，等待的毫秒数) 
+这个仅仅执行一次，所以可以理解为就是把一段代码延迟执行，平时省略window
+
+清除延时函数：
+let timer = setTimeout(回调函数，等待毫秒数)
+clearTimeout(timer)
+
+
+需要等待，所以后面的代码先执行
+每一次调用都会产生一个新的定时器
+
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    setTimeout(function () {
+      console.log('时间到了')
+    }, 2000)
+  </script>
+</body>
+
+</html>
