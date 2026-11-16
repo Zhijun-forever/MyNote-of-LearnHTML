@@ -1,0 +1,37 @@
+<!-- 
+i 正则匹配时不区分大小写
+g 匹配所有满足正则表达式的结果
+
+
+字符替换：
+
+字符串.replace（/正则表达式/,'替换为的文本'）;
+返回一个字符串
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    console.log(/^java$/.test('java'))
+    console.log(/^java$/i.test('JAVA'))
+    console.log(/^java$/i.test('Java'))
+    const str = 'java是一门编程语言， 学完JAVA工资很高'
+    // const re = str.replace(/java|JAVA/g, '前端')
+    const re = str.replace(/java/ig, '前端')
+    console.log(re)  // 前端是一门编程语言， 学完前端工资很高
+  </script>
+</body>
+
+</html>
